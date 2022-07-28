@@ -1,0 +1,95 @@
+---
+import { GoogleAnalytics } from 'astro-analytics';
+import { GITHUB_ICON, LINKEDIN_ICON, LOGO_ICON } from '../assets/images';
+
+import {
+  MENU_LISTS,
+  DEFAULT_PATH,
+  ZINC_DOCS_GET_STARTED_LINK,
+  ZINC_DOCS_SERVER_LINK,
+  GITHUB_REPO_LINK,
+  LINKEDIN_LINK
+} from '../utils/constant.js';
+import ButtonLink from './ButtonLink.astro';
+---
+
+<head>
+  <GoogleAnalytics id="G-QP72SPHZNE" />
+</head>
+<footer>
+  <section class="topFooter">
+    <div class="container">
+      <div class="column">
+        <div class="head">
+          <div class="logo">
+            <a rel="noreferrer noopener" href={DEFAULT_PATH}>
+              <img src={LOGO_ICON} alt="ZincSearch Logo">
+            </a>
+          </div>
+        </div>
+        <div class="content">
+          <p>315 Montgomery St, 10th Floor,</p>
+          <p class="noMargin">San Francisco,</p>
+          <p class="noMargin">California, 94104,</p>
+          <p class="noMargin">United States of America</p>
+          <p>
+            <ButtonLink hrefLink={"tel:+14154296096"} className={"bottomBorderHover"} title={"+1 (415) 429-6096"} />
+          </p>
+          <p class="noMargin">
+            <ButtonLink hrefLink={"mailto:hello+zincsearch@zinclabs.io"} className={"bottomBorderHover"} title={"hello+zincsearch@zinclabs.io"} />
+          </p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="head">
+          <h4>Quick Links</h4>
+        </div>
+        <div class="content">
+          <ul>
+            {MENU_LISTS.map((menu) => (
+              <li><a rel="noreferrer noopener" class="bottomBorderHover" href={menu.path}>{menu.name}</a></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div class="column">
+        <div class="head">
+          <h4>Docs</h4>
+        </div>
+        <div class="content">
+          <ul>
+            <li>
+              <ButtonLink hrefLink={ZINC_DOCS_GET_STARTED_LINK} className={"bottomBorderHover"} />
+            </li>
+            <li>
+              <ButtonLink hrefLink={ZINC_DOCS_SERVER_LINK} className={"bottomBorderHover"} title={"Server API"} />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bottomFooter noPadding">
+    <div class="container">
+      <div class="column">
+        <ul class="socialMedia">
+          <li>
+            <a rel="noreferrer noopener" href={GITHUB_REPO_LINK} title="GitHub" target="_blank">
+              <img src={GITHUB_ICON} alt="GitHub">
+            </a>
+          </li>
+          <li>
+            <a rel="noreferrer noopener" href={LINKEDIN_LINK} title="LinkedIn"
+              target="_blank">
+              <img src={LINKEDIN_ICON} alt="LinkedIn">
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="column">
+        <p>&copy; Copyright by Zinc Labs Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </section>
+</footer>

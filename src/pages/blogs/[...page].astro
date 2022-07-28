@@ -1,0 +1,41 @@
+---
+import { getPosts } from '../../utils/posts.js'
+
+export async function getStaticPaths({paginate}) {
+    /* Fetch all markdown posts */
+    const allPosts = await getPosts();
+    const sortedPosts = allPosts.sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+
+    return paginate(sortedPosts, {pageSize: 10});
+}
+
+// Imports
+import DefaultBlogLayout from '../../layouts/DefaultBlogLayout.astro';
+import HeaderTitle from '../../components/HeaderTitle.astro';
+import BlogPreviewList from '../../components/BlogPreviewList.astro';
+import Paginator from '../../components/Paginator.astro'
+
+// Variables
+let title = 'ZincSearch - A modern search engine - Blog';
+let description = 'ZincSearch Blog with high Search Engine Optimization.';
+let permalink = 'https://my-site.devblog/';
+const { page } = Astro.props;
+---
+
+<!DOCTYPE html>
+
+<DefaultBlogLayout title={title} description={description} permalink={permalink}>
+  <main id="blogs">
+    <HeaderTitle title={'Blogs'} />
+    <div class="blogs-section">
+      <div class="container">
+        <div class="blogsWrapper">
+          <div class="blogs__main">
+            {page.data.map((post) => <BlogPreviewList post={post} />)}
+          </div>
+        </div>
+      </div>
+    </div>
+    <Paginator page={page} />
+  </main> 
+</DefaultBlogLayout>

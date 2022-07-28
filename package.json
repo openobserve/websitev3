@@ -1,0 +1,23 @@
+{
+  "name": "ZincSearch",
+  "description": "Fastest Search Engine",
+  "version": "1.5.2",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "accessible-astro-components": "^1.5.4",
+    "astro-icon": "^0.7.1"
+  },
+  "devDependencies": {
+    "astro": "^1.0.0-beta.73",
+    "astro-analytics": "^2.1.1",
+    "autoprefixer": "^10.4.0",
+    "sass": "^1.49.9",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0"
+  }
+}

@@ -1,0 +1,17 @@
+---
+import Navigation from './Navigation.astro';
+
+import { LOGO_ICON } from '../assets/images';
+import { DEFAULT_PATH } from '../utils/constant.js';
+---
+
+<header id="header">
+  <div class="container">
+    <div class="logo">
+      <a rel="noreferrer noopener" href={DEFAULT_PATH}>
+        <img src={LOGO_ICON} alt="ZincSearch Logo">
+      </a>
+    </div>
+    <Navigation client:load></Navigation>
+  </div>
+</header>

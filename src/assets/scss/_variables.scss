@@ -1,0 +1,39 @@
+@import './colors';
+
+$margin-5: 0.3125rem;
+$margin-10: 0.625rem;
+$padding-5: 0.3125rem;
+$padding-10: 0.625rem;
+
+$common-vh: 100vh;
+$container-width: 1084px;
+
+$link-border-placeholder: 0.125rem solid transparent;
+$primary-border: 0.125rem solid $primary;
+$primary-light-border: 0.3125rem solid $primary-light;
+$secondary-border: 0.125rem solid $primary;
+$feature-card-border: 0.125rem solid $feature-card-border-color;
+$popup-border: 0.250rem solid $white;
+$carousel-indicator-border: 0.3125rem solid $carousel-indicator;
+$separator-footer-border: 0.0625rem solid rgba($separator-footer-gray, 0.2);
+$separator-companies-border: 0.0625rem solid $separator-companies-gray;
+
+$banner-height: 38.75rem;
+$banner-height-tablet: 56rem;
+$banner-height-mobile: 52rem;
+
+$btn-min-width: 8.125rem;
+$header-top-spacing: 2.125rem;
+$header-height: 2.625rem;
+$header-height-sticky: 4.25rem;
+$btn-height: 3.25rem;
+$bottom-footer-height: 3.875rem;
+$subscribe-height: 26.875rem;
+$demo-height: 26rem;
+$demo-height-tablet: 20rem;
+$video-height: 30.625rem;
+$video-width: 50rem;
+$demo-margin: 7.5rem 0;
+$faqs-width: 45rem;
+$mac-width: 57.55vw;
+$cta-width: 10.75rem;

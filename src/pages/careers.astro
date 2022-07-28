@@ -1,0 +1,135 @@
+---
+import '../assets/css/careers.css';
+
+import { COMPANY_IMAGE, CA_ICON_1, CA_ICON_2, CA_ICON_3, CA_ICON_4, CA_ICON_5, CA_ICON_6 } from '../assets/images';
+
+import DefaultLayout from '../layouts/DefaultLayout.astro';
+import Subscription from '../components/Subscription.astro';
+import HeaderTitle from '../components/HeaderTitle.astro';
+---
+
+<DefaultLayout>
+  <main id="careers">
+    <!-- Header -->
+    <HeaderTitle title={'Careers'} />
+
+    <!-- Careers -->
+    <div class="careers-section mt-100 mb-100">
+      <div class="container flex-direction-column">
+        <div class="row w-100 align-item-center justify-content-between">
+          <div class="text-contain col-6" scrolls-duration="1500">
+            <h1>Company Overview</h1>
+            <p>
+              ZincSearch is the company behind open source ZincSearch engine. ZincSearch is one of the fastest-growing
+              projects on
+              Github that provides a modern alternative to elasticsearch. ZincSearch is funded by leading VCs and
+              angel investors to
+              build the best search engine out there.
+            </p>
+          </div>
+          <div class="col-6" scrolls-duration="2000">
+            <img src={COMPANY_IMAGE} alt="Company" title="Company" class="fluid-img">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="careers" id="careers">
+      <div class="container">
+        <div class="head">
+          <h2>Why Work with us?</h2>
+          <p>
+            ZincSearch is the
+            <a rel="noreferrer noopener" href="https://runacap.com/ross-index/q1-2022/" class="noBorderHover"
+              target="_blank">fastest-growing</a>
+            open source search engine. It is backed by leading VCs and angel investors. You will be part of the team
+            that is reinventing search space.
+          </p>
+        </div>
+
+        <div class="content">
+          <div class="card card--career">
+            <div class="card__icon">
+              <img src={CA_ICON_1} alt="Fully Remote" />
+            </div>
+            <div class="card__head">Fully Remote</div>
+            <div class="card__content">
+              <p>Flexibility to allow employees to take personal time with work.</p>
+            </div>
+          </div>
+
+          <div class="card card--career">
+            <div class="card__icon">
+              <img src={CA_ICON_2} alt="Stock Options" />
+            </div>
+            <div class="card__head">Stock Options</div>
+            <div class="card__content">
+              <p>
+                We share our company success by rewarding employees with our stocks.
+              </p>
+            </div>
+          </div>
+
+          <div class="card card--career">
+            <div class="card__icon">
+              <img src={CA_ICON_3} alt="Future Of Search" />
+            </div>
+            <div class="card__head">Future Of Search</div>
+            <div class="card__content">
+              <p>
+                We drive you through the exciting journey and opportunities to shape the future of search.
+              </p>
+            </div>
+          </div>
+
+          <div class="card card--career">
+            <div class="card__icon">
+              <img src={CA_ICON_4} alt="Work on the latest tech stack" />
+            </div>
+            <div class="card__head">Latest Tech Stack</div>
+            <div class="card__content">
+              <p>
+                We provide you the flexibility to work on various latest tech stack used widely across the industry.
+              </p>
+            </div>
+          </div>
+
+          <div class="card card--career">
+            <div class="card__icon">
+              <img src={CA_ICON_5} alt="Fast growing company" />
+            </div>
+            <div class="card__head">Fast Growing Company</div>
+            <div class="card__content">
+              <p>
+                You will get diversed learning options to grow yourself along with the Company.
+              </p>
+            </div>
+          </div>
+
+          <div class="card card--career">
+            <div class="card__icon">
+              <img src={CA_ICON_6} alt="Flexible Timings" />
+            </div>
+            <div class="card__head">Flexible Timings</div>
+            <div class="card__content">
+              <p>Employees have privilege to manage their timings and get the work done.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="hirings" id="hirings">
+      <div class="container">
+        <div class="head">
+          <h2>We're Hiring</h2>
+        </div>
+
+        <div id='freshteam-widget'></div> 
+        <script src='https://s3.amazonaws.com/files.freshteam.com/production/136561/attachments/6003374919/original/6000065254_widget.js?1653092952'></script>  
+      </div>
+    </section> -->
+
+    <Subscription />
+  </main>
+</DefaultLayout>

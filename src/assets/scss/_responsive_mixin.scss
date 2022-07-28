@@ -1,0 +1,48 @@
+// mobile
+@mixin responsive_mobile() {
+  @media only screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+// tablet
+@mixin responsive_tablet() {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    @content;
+  }
+}
+
+// tablet and below
+@mixin responsive_medium2small() {
+  @media only screen and (max-width: 991px) {
+    @content;
+  }
+}
+
+// desktop
+@mixin responsive_desktop() {
+  @media only screen and (min-width: 992px) {
+    @content;
+  }
+}
+
+//responsive minWidth
+@mixin responsive_min($minWidth) {
+  @media only screen and (min-width: $minWidth) {
+    @content;
+  }
+}
+
+//responsive maxWidth
+@mixin responsive_max($maxWidth) {
+  @media only screen and (max-width: $maxWidth) {
+    @content;
+  }
+}
+
+// variable
+@mixin responsive($minWidth, $maxWidth) {
+  @media only screen and (min-width: $minWidth) and (max-width: $maxWidth) {
+    @content;
+  }
+}

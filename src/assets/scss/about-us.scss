@@ -1,0 +1,527 @@
+@import "variable";
+@import "mixins";
+@import "colors";
+
+.container {
+	width: $container-width;
+	margin: 0px auto;
+	display: flex;
+	justify-content: center;
+}
+
+.row {
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.w-100 {
+	width: 100%;
+}
+
+.align-item-center {
+	align-items: center;
+}
+
+.justify-content-between {
+	justify-content: space-between;
+}
+
+.flex-direction-column {
+	flex-direction: column;
+}
+
+.flex-direction-row {
+	flex-direction: row;
+}
+
+.fluid-img {
+	max-width: 100%;
+}
+
+.mt-100 {
+	margin-top: $mt-100;
+}
+
+.mb-100 {
+	margin-bottom: $mb-100;
+}
+
+.pt-100 {
+	padding-top: $pt-100;
+}
+
+.pb-100 {
+	padding-bottom: $pt-100;
+}
+
+// About-us 
+.about-us-section {
+	.text-contain {
+		h1 {
+			@include fontStyles($size: 2.25rem, $weight: 600, $lineHeight: 3.4375rem);
+			margin-bottom: 25px;
+		}
+
+		p {
+			@include fontStyles($size: 1rem, $lineHeight: 1.5625rem);
+			color: $black;
+		}
+
+		&.col-6 {
+			max-width: 444px;
+		}
+	}
+
+	.col-6 {
+		display: flex;
+		width: 50%;
+		flex-direction: column;
+	}
+
+	.right {
+		order: 2;
+	}
+
+	.left {
+		order: 1;
+	}
+
+	.points {
+		list-style-type: none;
+		@include fontStyles($size: 0.875rem, $lineHeight: 1.375rem);
+
+		li {
+			margin-bottom: 1rem;
+			position: relative;
+			padding-left: 20px;
+
+			&::before {
+				width: 10px;
+				height: 10px;
+				background: url(../images/common/bullet_icon.svg);
+				opacity: 1;
+				content: '';
+				position: absolute;
+				left: 0px;
+				top: 7px;
+				border-radius: 50%;
+			}
+		}
+	}
+}
+
+
+
+// Why-use
+
+.why-use-zinc {
+	background: $gray-gradient;
+	padding-bottom: 66px;
+
+	h2 {
+		margin-bottom: 50px;
+		text-align: center;
+		@include fontStyles($size: 2.25rem, $weight: 600, $lineHeight: 3.4375rem);
+	}
+
+	.row {
+		flex-wrap: nowrap;
+		padding: 0.75rem 1rem;
+
+		&:not(:first-of-type) {
+			padding-bottom: 1.5rem;
+		}
+	}
+
+	.box {
+		background: #FFFFFF 0% 0% no-repeat padding-box;
+		box-shadow: 0px 4px 20px rgba(227, 241, 234, 0.75);
+		padding: 1.563rem;
+		width: calc(50% - 0.6rem);
+		box-sizing: border-box;
+		overflow-x: visible !important;
+
+
+		figure {
+			@include flexBox($justify: flex-start, $gap: 1.5rem);
+			margin-bottom: 0.5rem;
+
+			figcaption {
+				@include fontStyles($size: 1.125rem, $weight: 600, $lineHeight: 1.5rem);
+				margin: 1rem 0px;
+				display: flex;
+			}
+		}
+	}
+
+	.points {
+		list-style-type: none;
+
+		li {
+			@include fontStyles($size: 0.875rem, $lineHeight: 1.375rem);
+			position: relative;
+			padding-left: 20px;
+
+			&:not(:first-of-type) {
+				margin-top: 0.75rem;
+			}
+
+			&::before {
+				width: 10px;
+				height: 10px;
+				background: url(../images/common/bullet_icon.svg);
+				opacity: 1;
+				content: '';
+				position: absolute;
+				left: 0px;
+				top: 7px;
+				border-radius: 50%;
+			}
+		}
+	}
+}
+
+
+.zinc-points-wrapper {
+	position: relative;
+	width: 100%;
+
+	background: url(../images/about-us/about_us_shape1.webp) no-repeat -200px top;
+	background-size: 361px 366px;
+}
+
+
+
+// Testimonial section
+
+.testimonial-wrapper {
+
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	min-height: 450px;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	background: url(../images/about-us/about_us_shape2.webp) no-repeat calc(100% + 208px) top;
+	background-size: 361px 366px;
+
+	h2 {
+		@include fontStyles($size: 2.25rem, $weight: 600, $lineHeight: 3.4375rem);
+		margin-bottom: 2rem;
+		text-align: center;
+	}
+
+	&.left-shape {
+
+		background: url(../images/about-us/about_us_shape1.webp) no-repeat -200px top;
+		background-size: 361px 366px;
+
+
+		.testimonial-user-img {
+			position: relative;
+
+			.testimonail-name {
+				white-space: nowrap;
+				position: absolute;
+				left: 0px;
+				top: 30%;
+				right: auto;
+				width: 150px;
+			}
+
+			.firm-name {
+				position: absolute;
+				right: 4px;
+				bottom: 35%;
+				padding: 0px 15px;
+				left: auto;
+				width: 150px;
+			}
+		}
+
+	}
+
+
+
+	.quote-section {
+		max-width: 952px;
+		width: 100%;
+		margin: 0px auto;
+
+		.text-contain {
+			h1 {
+				margin-bottom: 5px;
+
+				&,
+				span {
+					@include fontStyles($size: 1.5rem, $weight: 600, $lineHeight: 1.5rem);
+					@include flexBox($justify: flex-start);
+				}
+
+				a {
+					text-decoration: none;
+					margin-left: 0.5rem;
+					display: block;
+				}
+			}
+
+			label {
+				@include fontStyles($size: 0.875rem, $lineHeight: 1.5rem);
+				margin-bottom: 1.25rem;
+				text-align: left;
+			}
+
+			p {
+				@include fontStyles($size: 1rem, $lineHeight: 1.5625rem);
+				color: $black;
+			}
+
+			&.col-6 {
+				max-width: 368px;
+			}
+		}
+
+		.col-6 {
+			display: flex;
+			width: calc(100% - 425px);
+			flex-direction: column;
+		}
+
+		.right {
+			order: 2;
+		}
+
+		.left {
+			order: 1;
+		}
+	}
+
+	.testimonial-user-img {
+		position: relative;
+
+		img {
+			max-width: 90%;
+			margin: 0px auto;
+		}
+
+		.testimonail-name {
+			position: absolute;
+			white-space: nowrap;
+			right: 0px;
+			background-color: white;
+			height: 50px;
+			width: 160px;
+			border-radius: 50px;
+			-webkit-box-shadow: 0px 5px 9px #0000001f;
+			box-shadow: 0px 5px 9px #0000001f;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: $black;
+			padding: 0px 15px;
+			top: 30%;
+		}
+
+		.firm-name {
+			position: absolute;
+			left: -8px;
+			background-color: white;
+			height: 50px;
+			width: 140px;
+			border-radius: 50px;
+			background: #FFFFFF 0% 0% no-repeat padding-box;
+			-webkit-box-shadow: 0px 5px 9px #0000001f;
+			box-shadow: 0px 5px 9px #0000001f;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: $black;
+			bottom: 35%;
+			padding: 0px 15px;
+		}
+	}
+}
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {
+
+	.container {
+		width: 100%;
+	}
+
+	.contact-us-section {
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+
+	.about-us-section {
+		padding: 0px 15px;
+	}
+
+	.why-use-zinc {
+		padding-left: 15px;
+		padding-right: 15px;
+		padding-top: 50px;
+		padding-bottom: 66px;
+
+		.box {
+			width: calc(50% - 0.6rem);
+		}
+	}
+
+	.testimonial-wrapper {
+		.quote-section {
+			padding: 0px 15px;
+		}
+
+		&.left-shape {
+			margin-bottom: 6.25rem;
+		}
+	}
+
+}
+
+@media (max-width: 991.98px) {
+
+	.zinc-points-wrapper {
+		background: none;
+
+		.about-us-section {
+			margin-top: 50px;
+			margin-bottom: 50px;
+
+			.row {
+				flex-direction: column;
+			}
+		}
+
+		.row {
+			align-items: flex-start;
+			flex-direction: column;
+
+			.col-6 {
+				max-width: 100%;
+				width: 100%;
+
+				h1 {
+					margin-top: 1rem;
+				}
+			}
+		}
+
+		.fluid-img {
+			max-width: 90%;
+			margin: 0px auto;
+		}
+	}
+
+	.testimonial-wrapper {
+		.testimonial-user-img {
+			.testimonail-name {
+				display: none;
+			}
+
+			.firm-name {
+				display: none;
+			}
+		}
+
+		.quote-section {
+			.col-6 {
+				width: 50%;
+			}
+		}
+	}
+
+	.why-use-zinc {
+		padding-top: 50px;
+		padding-bottom: 66px;
+	}
+
+	.header-wrapper {
+		.header-container {
+			padding: 5rem 0 3rem;
+		}
+	}
+
+}
+
+@media (max-width: 767.98px) {
+
+	.about-us-section {
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+
+		.text-contain {
+			&.col-6 {
+				width: 100%;
+				max-width: 100%;
+			}
+		}
+
+		.col-6 {
+			width: 100%;
+			margin-top: 2rem;
+
+			.fluid-img {
+				max-width: 90%;
+				text-align: center;
+			}
+		}
+
+		.row {
+			flex-flow: column-reverse;
+		}
+	}
+
+	.why-use-zinc {
+		padding-bottom: 66px;
+
+		.row {
+			flex-direction: column;
+			padding-bottom: 0px;
+		}
+
+		.box {
+			width: calc(100% - 0px);
+			margin-bottom: 1rem;
+		}
+	}
+
+	.testimonial-wrapper {
+		.quote-section {
+			margin-bottom: 2rem;
+
+			.col-6 {
+				width: 100%;
+				text-align: center;
+				margin-top: 2rem;
+			}
+
+			.text-contain {
+				order: 2;
+
+				&.col-6 {
+					max-width: 100%;
+				}
+			}
+		}
+
+		.testimonial-user-img {
+			order: 1;
+		}
+	}
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+	.testimonial-wrapper {
+		background: none;
+
+		&.left-shape {
+			background: none;
+		}
+	}
+}

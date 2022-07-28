@@ -1,0 +1,185 @@
+@import "responsive_mixin";
+@import "variable";
+@import "mixins";
+
+.container {
+	width: $container-width;
+	margin: 0px auto;
+	display: flex;
+	justify-content: center;
+}
+
+.row {
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.w-100 {
+	width: 100%;
+}
+
+.align-item-center {
+	align-items: center;
+}
+
+.justify-content-between {
+	justify-content: space-between;
+}
+
+.flex-direction-column {
+	flex-direction: column;
+}
+
+.flex-direction-row {
+	flex-direction: row;
+}
+
+.fluid-img {
+	max-width: 100%;
+}
+
+.mt-100 {
+	margin-top: $mt-100;
+}
+
+.mb-100 {
+	margin-bottom: $mb-100;
+}
+
+.pt-100 {
+	padding-top: $pt-100;
+}
+
+.pb-100 {
+	padding-bottom: $pt-100;
+}
+
+// Use-cases 
+.use-cases-section {
+	.text-contain {
+		h1 {
+			@include fontStyles($size: 2.25rem, $weight: 600, $lineHeight: 3.4375rem);
+			margin-bottom: 25px;
+		}
+
+		p {
+			@include fontStyles($size: 1rem, $lineHeight: 1.5625rem);
+			color: $black;
+			margin-bottom: 1.25rem;
+
+			@include responsive_medium2small() {
+				text-align: justify;
+			}
+		}
+
+		&.col-6 {
+			max-width: 444px;
+		}
+	}
+
+	.col-6 {
+		display: flex;
+		width: 50%;
+		flex-direction: column;
+	}
+
+	hr {
+		margin: 3rem 0px;
+		box-shadow: none;
+		border: 1px solid rgba(#959EA8, 0.1);
+	}
+
+	.right {
+		order: 2;
+	}
+
+	.left {
+		order: 1;
+	}
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+
+	.header-wrapper {
+		.header-container {
+			h3 {
+				@include fontStyles($size: 2.25rem, $weight: 600, $lineHeight: 3.4375rem);
+			}
+		}
+	}
+
+	.use-cases-section {
+		margin-top: 50px;
+
+		.text-contain {
+			h1 {
+				@include fontStyles($size: 2.25rem, $weight: 600, $lineHeight: 3.4375rem);
+			}
+		}
+	}
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+	.use-cases-section {
+
+		h1 {
+			text-align: center;
+		}
+
+		.text-contain {
+			&.col-6 {
+				max-width: 100%;
+			}
+		}
+
+		.col-6 {
+			width: 100%;
+		}
+
+		.right {
+			order: 1;
+		}
+
+		.left {
+			order: 2;
+		}
+
+		.row {
+			flex-flow: column-reverse;
+			gap: 2rem;
+		}
+	}
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+
+	.header-wrapper {
+		.header-container {
+			padding-top: 45px;
+			padding-bottom: 45px;
+		}
+	}
+}
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {
+	.container {
+		width: 100%;
+	}
+
+	.use-cases-section {
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+}
+
+// X-Large devices (large desktops, less than 1400px)
+@media (max-width: 1399.98px) {}
+
+section.subscribe .container {
+	display: block;
+}

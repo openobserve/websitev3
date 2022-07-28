@@ -1,0 +1,19 @@
+@import './responsive_mixin';
+@import './mixins';
+@import './fonts';
+
+%h2 {
+  @include fontStyles($size: 2.25rem, $weight: 600, $lineHeight: 3.125rem);
+
+  @include responsive_tablet() {
+    @include fontStyles($size: 2rem, $weight: 600, $lineHeight: 3rem);
+  }
+
+  @include responsive_mobile() {
+    @include fontStyles($size: 1.8rem, $weight: 600, $lineHeight: 2.8rem);
+  }
+}
+
+%footerParagraph {
+  @include fontStyles($size: 0.875rem, $lineHeight: 1.375rem);
+}

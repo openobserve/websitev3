@@ -1,0 +1,38 @@
+---
+
+import site from "../utils/data.js";
+
+const { title, description, ogImageUrl } = Astro.props;
+let fullTitle = title + ' | ' + site.title;
+let fullDesc = description + ' | ' + site.description;
+
+if ( title === '' ) {
+  fullTitle = site.title;
+}
+if ( description === '' ) {
+  fullDesc = site.description;
+}
+---
+
+<!-- Primary Meta Tags -->
+<title>{fullTitle}</title>
+<meta name="title" content={fullTitle} />
+<meta name="description" content={fullDesc} />
+<!-- Sitemap -->
+<link rel="sitemap" href="/sitemap.xml">
+<!-- RSS -->
+<link rel="alternate" type="application/rss+xml" title={`${site.name} Blog`} href={`${site.url}/feed/blog.xml`}/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={site.url} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={fullDesc} />
+<meta property="og:image" content={ogImageUrl ? `${site.url}${ogImageUrl}` : `${site.url}/assets/img/social.jpg`} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={site.url} />
+<meta property="twitter:title" content={fullTitle} />
+<meta property="twitter:description" content={fullDesc} />
+<meta property="twitter:image" content={ogImageUrl ? `${site.url}${ogImageUrl}` : `${site.url}/assets/img/social.jpg`} />

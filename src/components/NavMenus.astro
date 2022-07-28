@@ -1,0 +1,15 @@
+---
+import { NAV_LISTS, ZINC_DOCS_LINK } from '../utils/constant.js';
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.split("/")[1];
+---
+
+<ul>
+  {NAV_LISTS.map((nav) => (
+    <li class={currentPath === nav.id ? "active" : ""}><a rel="noreferrer noopener" href={nav.path}>{nav.name}</a></li>
+  ))}
+  <li class="getStarted">
+    <a rel="noreferrer noopener" href={ZINC_DOCS_LINK} class="btn btn--primary btn--short">Get Started</a>
+  </li>
+</ul>

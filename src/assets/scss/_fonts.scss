@@ -1,0 +1,113 @@
+// Poppins_Regular
+@font-face {
+  font-family: 'Poppins_Regular';
+  src: url('../fonts/Poppins-Regular.ttf') format('truetype');
+}
+
+// Poppins_Italic
+@font-face {
+  font-family: 'Poppins_Italic';
+  src: url('../fonts/Poppins-Italic.ttf') format('truetype');
+}
+
+// Poppins_Medium
+@font-face {
+  font-family: 'Poppins_Medium';
+  src: url('../fonts/Poppins-Medium.ttf') format('truetype');
+}
+
+// Poppins_MediumItalic
+@font-face {
+  font-family: 'Poppins_MediumItalic';
+  src: url('../fonts/Poppins-MediumItalic.ttf') format('truetype');
+}
+
+// Poppins_SemiBold
+@font-face {
+  font-family: 'Poppins_SemiBold';
+  src: url('../fonts/Poppins-SemiBold.ttf') format('truetype');
+}
+
+// Poppins_SemiBoldItalic
+@font-face {
+  font-family: 'Poppins_SemiBoldItalic';
+  src: url('../fonts/Poppins-SemiBoldItalic.ttf') format('truetype');
+}
+
+// Poppins_Bold
+@font-face {
+  font-family: 'Poppins_Bold';
+  src: url('../fonts/Poppins-Bold.ttf') format('truetype');
+}
+
+// Poppins_BoldItalic
+@font-face {
+  font-family: 'Poppins_BoldItalic';
+  src: url('../fonts/Poppins-BoldItalic.ttf') format('truetype');
+}
+
+.poppins_regular {
+  font-family: 'Poppins_Regular', sans-serif;
+}
+
+.poppins_italic {
+  font-family: 'Poppins_Italic', sans-serif;
+}
+
+.poppins_medium {
+  font-family: 'Poppins_Medium', sans-serif;
+}
+
+.poppins_mediumitalic {
+  font-family: 'Poppins_MediumItalic', sans-serif;
+}
+
+.poppins_semibold {
+  font-family: 'Poppins_SemiBold', sans-serif;
+}
+
+.poppins_semibolditalic {
+  font-family: 'Poppins_SemiBoldItalic', sans-serif;
+}
+
+.poppins_bold {
+  font-family: 'Poppins_Bold', sans-serif;
+}
+
+.poppins_bolditalic {
+  font-family: 'Poppins_BoldItalic', sans-serif;
+}
+
+@mixin fontFamily($family: poppins_regular) {
+  @if $family ==poppins_regular {
+    font-family: 'Poppins_Regular', sans-serif;
+  }
+
+  @else if $family ==poppins_italic {
+    font-family: 'Poppins_Italic', sans-serif;
+  }
+
+  @else if $family ==poppins_medium {
+    font-family: 'Poppins_Medium', sans-serif;
+  }
+
+  @else if $family ==poppins_mediumitalic {
+    font-family: 'Poppins_MediumItalic', sans-serif;
+  }
+
+  @else if $family ==poppins_semibold {
+    font-family: 'Poppins_SemiBold', sans-serif;
+  }
+
+  @else if $family ==poppins_semibolditalic {
+    font-family: 'Poppins_SemiBoldItalic', sans-serif;
+  }
+
+  @else if $family ==poppins_bold {
+    font-family: 'Poppins_Bold', sans-serif;
+  }
+
+  @else if $family ==poppins_bolditalic {
+    font-family: 'Poppins_BoldItalic', sans-serif;
+  }
+}

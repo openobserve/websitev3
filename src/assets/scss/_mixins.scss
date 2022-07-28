@@ -1,0 +1,84 @@
+@import 'responsive_mixin';
+@import 'fonts';
+
+@mixin fontStyles($size: 1rem, $weight: normal, $style: normal, $lineHeight: 1.5625rem) {
+  @if $style ==normal {
+    @if $weight ==normal {
+      @include fontFamily(poppins_regular);
+    }
+
+    @else if $weight ==500 {
+      @include fontFamily(poppins_medium);
+    }
+
+    @else if $weight ==600 {
+      @include fontFamily(poppins_semibold);
+    }
+
+    @else if $weight ==700 {
+      @include fontFamily(poppins_bold);
+    }
+  }
+
+  @if $style ==italic {
+    @if $weight ==normal {
+      @include fontFamily(poppins_italic);
+    }
+
+    @else if $weight ==500 {
+      @include fontFamily(poppins_mediumitalic);
+    }
+
+    @else if $weight ==600 {
+      @include fontFamily(poppins_semibolditalic);
+    }
+
+    @else if $weight ==700 {
+      @include fontFamily(poppins_bolditalic);
+    }
+  }
+
+  font-size: $size;
+  line-height: $lineHeight;
+
+  @include responsive_min(1400px) {
+    font-size: $size;
+  }
+
+  @include responsive_desktop() {
+    font-size: $size * 0.85;
+  }
+
+  @include responsive_tablet() {
+    font-size: $size * 0.90;
+  }
+
+  @include responsive_mobile() {
+    font-size: $size * 0.80;
+  }
+}
+
+@mixin borderRadius($borderRadius: 0.25rem) {
+  border-radius: $borderRadius;
+}
+
+@mixin transition($time: 0.25s) {
+  transition: all $time ease-in-out;
+}
+
+@mixin boxShadow($shadow: 0px 6px 12px, $color: rgba($black, 0.06)) {
+  box-shadow: $shadow $color;
+}
+
+@mixin flexBox($justify: space-between, $align: center, $direction: row, $wrap: initial, $gap: 0) {
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+  display: flex;
+  gap: $gap;
+}
+
+@mixin cursor($cursor: pointer) {
+  cursor: $cursor;
+}

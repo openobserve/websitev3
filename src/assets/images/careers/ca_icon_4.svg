@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+  <g id="tech-stack-icon" transform="translate(-1020 -326)">
+    <rect id="Rectangle_6191" data-name="Rectangle 6191" width="60" height="60" rx="6" transform="translate(1020 326)" fill="#f9ecff"/>
+    <g id="stacked-files-svgrepo-com" transform="translate(1029 319.712)">
+      <g id="Group_14457" data-name="Group 14457" transform="translate(0 18.288)">
+        <path id="Path_1204" data-name="Path 1204" d="M40.12,26.833,21.3,18.442a1.751,1.751,0,0,0-1.434,0L1.052,26.833A1.762,1.762,0,0,0,.941,30L19.757,40.031a1.765,1.765,0,0,0,1.66,0L40.234,30a1.761,1.761,0,0,0-.114-3.163Z" transform="translate(-0.008 -18.288)" fill="#70398b"/>
+        <path id="Path_1205" data-name="Path 1205" d="M38.566,137.449l-17.989,9.6-17.986-9.6a1.762,1.762,0,0,0-1.659,3.109L19.75,150.6a1.766,1.766,0,0,0,1.66,0l18.817-10.038a1.762,1.762,0,0,0-1.66-3.109Z" transform="translate(0 -121.395)" fill="#70398b"/>
+        <path id="Path_1206" data-name="Path 1206" d="M38.566,189.118l-17.989,9.593L2.592,189.118a1.762,1.762,0,1,0-1.659,3.108L19.75,202.261a1.759,1.759,0,0,0,1.66,0l18.817-10.034a1.762,1.762,0,1,0-1.66-3.108Z" transform="translate(0 -166.182)" fill="#70398b"/>
+      </g>
+    </g>
+  </g>
+</svg>

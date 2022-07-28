@@ -1,0 +1,71 @@
+---
+import '../assets/css/use-cases.css';
+
+import {
+  LOG_SEARCH,
+  APP_SEARCH,
+  EDGE_SEARCH
+} from '../assets/images';
+
+import DefaultLayout from '../layouts/DefaultLayout.astro';
+import Subscription from '../components/Subscription.astro';
+import HeaderTitle from '../components/HeaderTitle.astro';
+---
+
+<DefaultLayout>
+  <main id="use-cases">
+    <!-- Header -->
+    <HeaderTitle title={'Use Cases'} />
+
+    <!-- Use-cases -->
+    <div class="use-cases-section mt-100 mb-100">
+      <div class="container flex-direction-column">
+        <div class="row w-100 align-item-center justify-content-between">
+          <div class="text-contain col-6" scrolls-duration="1500">
+            <h1>Log Search</h1>
+            <p>Searching for logs for your applications can be tedious and challenging. ZincSearch solves the
+              problem very elegantly. You can use standard log forwarders like fluentd, fluent-bit,
+              vector, syslog-ng or others to forward logs to ZincSearch. ZincSearch can then store the indexed logs in
+              S3 or on disk and provide fast search for your logs.</p>
+            <p>Log forwarders can read the log files incrementally as new logs appear in them and can then
+              forward them in batches in order to be more efficient in sending them.</p>
+          </div>
+          <div class="col-6" scrolls-duration="2000">
+            <img src={LOG_SEARCH} alt="log-search-img" title="log-search-img"
+              class="fluid-img">
+          </div>
+        </div>
+        <hr>
+        <div class="row w-100 align-item-center justify-content-between">
+          <div class="text-contain col-6 right" scrolls-duration="1500">
+            <h1>App Search</h1>
+            <p>Almost every application requires search functionality. If you are using relational database for your
+              application needs, using SQL LIKE for text searches has the potential to kill the database. ZincSearch
+              is the perfect search solution in this case.</p>
+          </div>
+          <div class="col-6 left" scrolls-duration="2000">
+            <img src={APP_SEARCH} alt="app-search" title="app-search"
+              class="fluid-img">
+          </div>
+        </div>
+        <hr>
+        <div class="row w-100 align-item-center justify-content-between">
+          <div class="text-contain col-6" scrolls-duration="1500">
+            <h1>Edge Search</h1>
+            <p>You have low powered devices on the edge that require search functionality.
+              ZincSearch is the perfect solution to provide search on these low powered devices.</p>
+            <p>e.g. Your IoT/IDS/IPS/Firewall device needs search capability for so users can search for
+              required data or logs.</p>
+          </div>
+          <div class="col-6" scrolls-duration="2000">
+            <img src={EDGE_SEARCH} alt="edge-search" title="edge-search"
+              class="fluid-img">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <Subscription />
+  </main>
+</DefaultLayout>

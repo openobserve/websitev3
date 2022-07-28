@@ -1,0 +1,49 @@
+---
+import {
+  GITHUB_REPO_LINK,
+  GITHUB_FORK_REPO_LINK
+} from '../utils/constant.js';
+import NavMenus from './NavMenus.astro';
+---
+
+<nav>
+  <div class="desktop">
+    <div class="github_actions">
+      
+      <a rel="noreferrer noopener" class="github-button" href={GITHUB_REPO_LINK}
+        data-color-scheme="no-preference: light; light: light; dark: light;" data-size="large"
+        data-show-count="true" aria-label="Star zinclabs/zinc on GitHub" />
+        
+      <a rel="noreferrer noopener" class="github-button" href={GITHUB_FORK_REPO_LINK}
+        data-color-scheme="no-preference: light; light: light; dark: light;" data-icon="octicon-repo-forked"
+        data-size="large" data-show-count="true" aria-label="Fork zinclabs/zinc on GitHub" />
+    </div>
+    <NavMenus client:load />
+  </div>
+  <div class="tabAndbelow">
+    <template id="githubButtonsTemplate">
+      <a rel="noreferrer noopener" class="github-button" href={GITHUB_REPO_LINK}
+        data-color-scheme="no-preference: light; light: light; dark: light;" data-show-count="true"
+        aria-label="Star zinclabs/zinc on GitHub" />
+
+      <a rel="noreferrer noopener" class="github-button" href={GITHUB_FORK_REPO_LINK}
+        data-color-scheme="no-preference: light; light: light; dark: light;" data-icon="octicon-repo-forked"
+        data-show-count="true" aria-label="Fork zinclabs/zinc on GitHub" />
+    </template>
+    <div class="tabAndbelow__actions">
+      <div id="githubButtonsContainer" />
+      <div class="hamburger-menu">
+        <span class="line line__one" />
+        <span class="line line__two" />
+        <span class="line line__three" />
+      </div>
+    </div>
+    <div class="mobile-menu">
+      <div class="container">
+        <NavMenus client:load />
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>

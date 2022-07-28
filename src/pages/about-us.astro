@@ -1,0 +1,167 @@
+---
+import '../assets/css/about-us.css';
+
+import {
+  ABOUT_ZINC_SEARCH,
+  COLOR_LINKEDIN_ICON,
+  WHY_ZINC_1, 
+  WHY_ZINC_2,
+  WHY_ZINC_3,
+  WHY_ZINC_4,
+  FOUNDER_1,
+  FOUNDER_2
+} from '../assets/images';
+
+import DefaultLayout from '../layouts/DefaultLayout.astro';
+import HeaderTitle from '../components/HeaderTitle.astro';
+---
+
+<DefaultLayout>
+  <main id="about-us">
+    <!-- Header -->
+    <HeaderTitle title={'About Us'} />
+
+    <!-- About us -->
+    <div class="about-us-section mt-100 mb-100">
+      <div class="container">
+        <div class="row w-100 align-item-center justify-content-between">
+          <div class="text-contain col-6">
+            <h1>ZincSearch</h1>
+            <p>At ZincSearch, we bring <b>Cloud, Kubernetes, DevOps</b> and <b>Engineering expertise</b> to
+              provide a solution to the problem of observability at low cost. ZincSearch is the simplest
+              and easiest search system to get up and running. <b>Founded in 2022, ZincSearch came up with an open
+                source easy-to-use search engine that solves your observability needs the best.</b></p>
+          </div>
+          <div class="col-6">
+            <img src={ABOUT_ZINC_SEARCH} alt="ZincSearch" title="ZincSearch"
+              class="fluid-img">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why use zinc -->
+    <div class="why-use-zinc pt-100">
+      <div class="container flex-direction-column">
+        <h2 class="align-item-center">Why use ZincSearch?</h2>
+        <div class="row flex-direction-row justify-content-between">
+          <div class="col-6 box">
+            <figure>
+              <img style="max-height:35px" src={WHY_ZINC_1}
+                alt="Lower Resource Requirements (CPU, Memory)" title="Lower Resource Requirements (CPU, Memory)">
+              <figcaption>Lower Resource Requirements (CPU, Memory).</figcaption>
+            </figure>
+            <ul class="points">
+              <li>Lower cost of infrastructure</li>
+              <li>Every developer can run it on their laptop without consuming too much resources.</li>
+            </ul>
+          </div>
+          <div class="col-6 box">
+            <figure>
+              <img style="max-height:35px" src={WHY_ZINC_2}
+                alt="Lower Resource Requirements (CPU, Memory)" title="Lower Resource Requirements (CPU, Memory)">
+              <figcaption>Easy To Operate</figcaption>
+            </figure>
+            <ul class="points">
+              <li>Lower cost of manpower.</li>
+              <li>Faster time to market.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row flex-direction-row justify-content-between">
+          <div class="col-6 box">
+            <figure>
+              <img style="max-height:35px" src={WHY_ZINC_3}
+                alt="Lower Resource Requirements (CPU, Memory)" title="Lower Resource Requirements (CPU, Memory)">
+              <figcaption>Stateless Server (Experimental Phase)</figcaption>
+            </figure>
+            <ul class="points">
+              <li>ZincSearch strives to provide stateless servers that can be scaled horizontally.</li>
+              <li>Storing data on S3 and MinIO allowing you to bring servers up and down based on load.</li>
+            </ul>
+          </div>
+          <div class="col-6 box">
+            <figure>
+              <img style="max-height:35px" src={WHY_ZINC_4}
+                alt="Lower Resource Requirements (CPU, Memory)" title="Lower Resource Requirements (CPU, Memory)">
+              <figcaption>Edge Search</figcaption>
+            </figure>
+            <ul class="points">
+              <li>Generally to search logs/data generated at edge you need to send them to a centralized
+                logging system due to high resource requirements of the search server.</li>
+              <li>ZincSearch allows you to search at edge with its small footprint.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonial Section -->
+    <div class="testimonial-wrapper">
+      <div class="container">
+        <div class="quote-section mt-100 mb-100">
+          <h2 class="align-item-center">The Team</h2>
+          <div class="row w-100 align-item-center justify-content-between">
+            <div class="text-contain col-6" scrolls-duration="1500">
+              <h1>
+                <span>Prabhat Sharma</span>
+                <a rel="noreferrer noopener" href="https://www.linkedin.com/in/hiprabhat/" target="_blank">
+                  <img src={COLOR_LINKEDIN_ICON} alt="LinkedIn - Prabhat Sharma"
+                    title="LinkedIn - Prabhat Sharma" class="fluid-img">
+                </a>
+              </h1>
+              <label>Founder & CEO</label>
+              <p>ZincSearch was founded by Prabhat Sharma based on his learnings from years
+                of his work at AWS working with hundreds of startups, ISVs and very large
+                customers who faced the challenge of searching logs and other application data.</p>
+            </div>
+            <div class="col-6 testimonial-user-img">
+              <img src={FOUNDER_1} alt="ZincSearch" title="ZincSearch"
+                class="fluid-img">
+
+              <span class="testimonail-name">
+                Prabhat Sharma
+              </span>
+              <span class="firm-name">
+                ZincSearch
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-wrapper left-shape">
+      <div class="container">
+        <div class="quote-section mt-100 mb-100">
+          <div class="row w-100 align-item-center justify-content-between">
+            <div class="text-contain col-6 right">
+              <h1>
+                <span>Hengfei Yang</span>
+                <a rel="noreferrer noopener" href="https://www.linkedin.com/in/hengfeiyang/" target="_blank">
+                  <img src={COLOR_LINKEDIN_ICON} alt="LinkedIn - Hengfei Yang"
+                    title="LinkedIn - Hengfei Yang" class="fluid-img">
+                </a>
+              </h1>
+              <label>Founding Engineer</label>
+              <p>Hengfei Yang is a full stack engineer with rich experience in distributed system development.
+                He is passionate about open source. He has built and led many technical teams in the past 10 years.
+              </p>
+            </div>
+            <div class="col-6 left testimonial-user-img">
+              <img src={FOUNDER_2} alt="ZincSearch" title="ZincSearch"
+                class="fluid-img">
+
+              <span class="testimonail-name">
+                Hengfei Yang
+              </span>
+              <span class="firm-name">
+                ZincSearch
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</DefaultLayout>

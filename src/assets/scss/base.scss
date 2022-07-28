@@ -1,0 +1,36 @@
+*,
+html,
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font: normal 16px sans-serif;
+  min-height: 100%;
+
+  scrollbar-color: #5CA380 #F3FFF9;
+  scrollbar-width: thin;
+  overflow-x: hidden;
+}
+
+.loader {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite;
+  border: 2px solid white;
+  border-top-color: transparent;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg)
+  }
+}

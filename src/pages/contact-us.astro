@@ -1,0 +1,111 @@
+---
+import '../assets/css/contact-us.css';
+
+import { CONTACT_IMAGE, LOCATION_ICON, CALL_ICON, EMAIL_ICON } from '../assets/images';
+
+import HeaderTitle from '../components/HeaderTitle.astro';
+import DefaultLayout from '../layouts/DefaultLayout.astro';
+---
+
+<DefaultLayout>
+  <main id="contact-us">
+    <!-- Header -->
+    <HeaderTitle title={'Contact Us'} />
+
+    <!-- Contact us -->
+    <div class="contact-us-section mt-100 mb-100">
+      <div class="container flex-direction-column">
+        <div class="row w-100 justify-content-between">
+          <div class="text-contain col-6">
+            <h1>Let us know how we can help you in your needs of a search system ?</h1>
+            <label class="label">
+              <p>
+                We can help you architect your system to provide observability at scale with no associated drama and
+                costs.
+              </p>
+
+              <p>Fill out the form below and we will reach out shortly.</p>
+
+              <p>You could also send us an email at <a rel="noreferrer noopener"
+                  href="mailto:hello@zinclabs.io">hello@zinclabs.io</a></p>
+            </label>
+
+            <form id="contact-us-form" method="post" class="form">
+              <div class="form-field">
+                <input type="text" name="name" id="name" autocomplete="off" placeholder="Enter your name"
+                  onkeyup="handleInputUpdate(event)" />
+                <small class="error name">Name is required</small>
+              </div>
+
+              <div class="form-field">
+                <input type="email" name="email" id="email" autocomplete="off" placeholder="Enter your email"
+                  onkeyup="handleInputUpdate(event)" />
+                <small class="error email">Email is required</small>
+              </div>
+
+              <div class="form-field">
+                <input type="text" name="website" id="website" autocomplete="off" placeholder="Enter your Website" />
+                <small class="error website">Website is required</small>
+              </div>
+              <div class="form-field">
+                <input type="tel" name="mobile" id="mobile" maxlength={10} autocomplete="off"
+                  placeholder="Enter your mobile number" />
+                <small class="error mobile">Mobile Number is required</small>
+              </div>
+              <div class="form-field noMargin">
+                <textarea name="message" id="message" onkeyup="handleInputUpdate(event)"
+                  placeholder="Enter your Message"></textarea>
+                <small class="error message">Message is required</small>
+              </div>
+
+              <div id="form-submit-message"></div>
+
+              <div class="form-field">
+                <button type="submit" class="btn btn--tall btn--secondary">
+                  <i class="loader"></i>
+                  <span>Send Now</span>
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="col-6 contact-detail">
+            <figure>
+              <img src={CONTACT_IMAGE} alt="Contact Image" title="ZincSearch"
+                class="fluid-img">
+            </figure>
+            <div class="address">
+              <span class="icon">
+                <img src={LOCATION_ICON} alt="Location Icon" title="ZincSearch" class="fluid-img">
+              </span>
+              <span class="office-addres">
+                315 Montgomery St, 10th Floor, <br> San Francisco, California, 94104,<br> United States
+                of America
+              </span>
+            </div>
+            <div class="address">
+              <span class="icon">
+                <img src={CALL_ICON} alt="Call Icon" title="ZincSearch"
+                  class="fluid-img">
+              </span>
+              <span class="office-addres">
+                <a rel="noreferrer noopener" href="tel:+14154296096" class="bottomBorderHover">+1 (415) 429-6096</a>
+              </span>
+            </div>
+            <div class="address" style="padding-top: 0;transform: translateY(-20px);">
+              <span class="icon">
+                <img src={EMAIL_ICON} alt="Email Icon" title="ZincSearch"
+                  class="fluid-img">
+              </span>
+              <span class="office-addres">
+                <a rel="noreferrer noopener" href="mailto:hello+zincsearch@zinclabs.io"
+                  class="bottomBorderHover">hello+zincsearch@zinclabs.io</a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</DefaultLayout>
+
+<script is:inline src='/assets/js/contactusScript.js' />

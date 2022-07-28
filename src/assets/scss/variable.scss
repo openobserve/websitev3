@@ -1,0 +1,29 @@
+// container width size
+$container-width: 1140px;
+
+//background color 
+$gray-bgcolor: #FBF2ED;
+$gray-gradient: transparent linear-gradient(180deg, rgba(243, 255, 249, 1) 0%, rgba(255, 255, 255, 1) 100%) 0% 0% no-repeat padding-box;
+$dark-gray: #505050;
+
+// color code
+$primary-color: #EE82EE;
+$black: #000000;
+
+
+
+// margin
+$mt-100: 100px;
+$mb-100: 100px;
+$pt-100: 100px;
+$pb-100: 100px;
+
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);

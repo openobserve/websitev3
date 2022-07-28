@@ -1,0 +1,11 @@
+---
+import { ZINC_DOCS_LINK } from "../utils/constant.js";
+ 
+const {
+  title = 'Get Started',
+  className = 'cta btn btn--primary',
+  hrefLink = ZINC_DOCS_LINK
+} = Astro.props;
+---
+
+<a rel="noreferrer noopener" href={hrefLink} class={className}>{title}</a>

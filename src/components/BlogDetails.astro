@@ -1,0 +1,57 @@
+---
+// Imports
+import { BLOGS_PATH } from '../utils/constant.js';
+import HeaderTitle from './HeaderTitle.astro';
+
+// Constants
+const { publishDate, heroImage, alt, title, author } = Astro.props;
+console.log(author);
+const BOOK_ICON = '/assets/blogs/book_icon.png';
+const CALENDAR_ICON = '/assets/blogs/calendar_icon.png';
+const LINK_ARROW = '/assets/blogs/link_arrow.svg';
+---
+
+<main id="blogs">
+  <HeaderTitle title={'Blogs'} />
+    <div class="blogs-section">
+      <div class="container">
+        <div class="blogDetailsWrapper blog">
+          <div class="breadCrumb">
+            <a rel="noreferrer noopener" href={BLOGS_PATH}>Blogs</a>
+            <img src={LINK_ARROW} alt="Arrow Right" />
+            <span>Blog Details</span>
+          </div>
+  
+          <div class="blogMainImage">
+            {heroImage && <img class="post__feature-img" loading="lazy" src={heroImage} alt={alt} itemprop="image" />}
+          </div>
+  
+          <div class="blog__author_and_date">
+            <div class="author_wrapper">
+              <img src={BOOK_ICON} alt="Book Icon" />
+              <span>{author}</span>
+            </div>
+            <div class="date_wrapper">
+              <img src={CALENDAR_ICON} alt="Calender Icon" />
+              <span>{publishDate}</span>
+            </div>
+          </div>
+  
+          <div class="blog__content">
+            <h1>{title}</h1>
+
+            <slot />
+          </div>
+  
+          <!-- <section class="post__content">
+            <div style="float:left;display:inline-block;">
+              {allCategoriesData.map(category => (
+                  <span><a href={`/blog/categories/${category.slug}`}>#{category.name}</a>&nbsp;</span>
+              ))}
+              </div>
+          </section> -->
+  
+        </div>
+      </div>
+    </div>
+</main>
