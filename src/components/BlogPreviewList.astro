@@ -3,31 +3,31 @@
 // Variables
 const { post } = Astro.props;
 
-const BOOK_ICON = '/assets/blogs/book_icon.png';
-const CALENDAR_ICON = '/assets/blogs/calendar_icon.png';
+const BOOK_ICON = '/assets/blog/book_icon.png';
+const CALENDAR_ICON = '/assets/blog/calendar_icon.png';
 
 let postTitleLink = 'Read more about ' + post.title;
 ---
 
 <a class="card card--blog" href={post.url} title={postTitleLink} rel="bookmark" itemprop="url">
-    <div class="card__media">
-      { post.heroImage && <img class="post__feature-img" loading="lazy" src={post.heroImage} alt={post.alt} itemprop="image" />}
+  <div class="card__media">
+    { post.heroImage && <img class="post__feature-img" loading="lazy" src={post.heroImage} alt={post.alt}
+      itemprop="image" />}
+  </div>
+  <div class="card__content">
+    <div class="card__heading">{post.title}</div>
+    <div class="card__body">
+      <p>{post.description}</p>
     </div>
-    <div class="card__content">
-      <div class="card__heading">{post.title}</div>
-      <div class="card__body">
-        <p>{post.description}</p>
+    <div class="card__footer">
+      <div class="author_wrapper">
+        <img src={BOOK_ICON} alt="Book Icon" />
+        <span>{post.author}</span>
       </div>
-      <div class="card__footer">
-        <div class="author_wrapper">
-          <img src={BOOK_ICON} alt="Book Icon" />
-          <span>{post.author}</span>
-        </div>
-        <div class="date_wrapper">
-          <img src={CALENDAR_ICON} alt="Calender Icon" />
-          <span>{post.publishDate}</span>
-        </div>
+      <div class="date_wrapper">
+        <img src={CALENDAR_ICON} alt="Calender Icon" />
+        <span>{post.publishDate}</span>
       </div>
     </div>
-  </a>
-  
+  </div>
+</a>

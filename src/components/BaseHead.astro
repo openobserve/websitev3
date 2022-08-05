@@ -6,10 +6,10 @@ const { title, description, ogImageUrl } = Astro.props;
 let fullTitle = title + ' | ' + site.title;
 let fullDesc = description + ' | ' + site.description;
 
-if ( title === '' ) {
+if (title === '') {
   fullTitle = site.title;
 }
-if ( description === '' ) {
+if (description === '') {
   fullDesc = site.description;
 }
 ---
@@ -21,7 +21,7 @@ if ( description === '' ) {
 <!-- Sitemap -->
 <link rel="sitemap" href="/sitemap.xml">
 <!-- RSS -->
-<link rel="alternate" type="application/rss+xml" title={`${site.name} Blog`} href={`${site.url}/feed/blog.xml`}/>
+<link rel="alternate" type="application/rss+xml" title={`${site.name} Blog`} href={`${site.url}/feed/blog.xml`} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
@@ -35,4 +35,5 @@ if ( description === '' ) {
 <meta property="twitter:url" content={site.url} />
 <meta property="twitter:title" content={fullTitle} />
 <meta property="twitter:description" content={fullDesc} />
-<meta property="twitter:image" content={ogImageUrl ? `${site.url}${ogImageUrl}` : `${site.url}/assets/img/social.jpg`} />
+<meta property="twitter:image" content={ogImageUrl ? `${site.url}${ogImageUrl}` :
+  `${site.url}/assets/img/social.jpg`} />

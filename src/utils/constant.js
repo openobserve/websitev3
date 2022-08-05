@@ -8,7 +8,7 @@ export const ABOUT_US_PATH = '/about-us';
 export const USE_CASES_PATH = '/use-cases';
 export const CONTACT_US_PATH = '/contact-us';
 export const CAREERS_PATH = '/careers';
-export const BLOGS_PATH = '/blogs';
+export const BLOGS_PATH = '/blog';
 
 // ZINC DOCS LINKS
 export const ZINC_DOCS_LINK = 'https://docs.zincsearch.com/';
@@ -51,8 +51,8 @@ export const MENU_LISTS = [
   },
   {
     path: BLOGS_PATH,
-    id: "blogs",
-    name: 'Blogs'
+    id: "blog",
+    name: 'Blog'
   }
 ];
 
