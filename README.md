@@ -7,3 +7,6 @@
 
 - npm run build
 
+
+
+staging URL - http://zincsearch-website-staging.s3-website-us-west-2.amazonaws.com/
