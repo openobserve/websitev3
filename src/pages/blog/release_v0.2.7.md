@@ -14,9 +14,7 @@ categories:
 ---
 ZincSearch is a lightweight Elasticsearch replacement tool, with compatible Elasticsearch APIs, and comes with a UI to replace the Elasticsearch family of Kibana. Zinc is developed in Go and can be directly started and used with a single binary. Installation and use are much simpler than Elasticsearch, and resource consumption is also much lower than Elasticsearch.
 
-We just released version v0.2.7, download address:
-
-https://github.com/zinclabs/zinc/releases/tag/v0.2.7
+We just released version v0.2.7, download address: [https://github.com/zinclabs/zinc/releases/tag/v0.2.7](https://github.com/zinclabs/zinc/releases/tag/v0.2.7)
 
 We will try to maintain the frequency of releasing a version every two weeks in the future.
 
