@@ -188,7 +188,7 @@
 				}
 			}
 			&__content {
-				h1, h2, h3, h4, h5, h6, p, img:not(.emoji), ol, ul, dl {margin-bottom: 1.25rem;}
+				h1, h2, h3, h4, h5, h6, p, img:not(.emoji), ol, ul, dl, pre {margin-bottom: 1.25rem;}
 				img.emoji {
 					transform: translateY(5px);
 					display: inline-block;
@@ -272,7 +272,11 @@
 					background-color: #F5FFFA;
 					margin-bottom: 1.5rem;
 					font-weight: bold;
-					padding: 1.5rem;
+					padding: 1rem;
+
+					& :last-of-type {
+						margin-bottom: 0;
+					}
 
 					q {
 						margin-bottom: 0.5rem;

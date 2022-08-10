@@ -57,6 +57,7 @@ This interface queries whether the specified index exists, using the HEAD method
 ```json
 {"title": "Hello", "attr": "foo"}
 {"title": "World", "attr": "baa"}
+
 This interface is another bulk interface. The accepted input is one JSON document per line. Of course, it only supports insertion, not update and delete operations.
 ```
 
@@ -66,11 +67,11 @@ This interface is another bulk interface. The accepted input is one JSON documen
 
 ```json
 {
- "index": "indexName",
- "records": [
- {"title": "This is", "attr": "foo"},
- {"title": "Cool stuff", "attr": "baa"}
- ]
+  "index": "indexName",
+  "records": [
+    {"title": "This is", "attr": "foo"},
+    {"title": "Cool stuff", "attr": "baa"}
+  ]
 }
 ```
 This API is another bulk interface that accepts as input a standard JSON structure, an index name and multiple JSON documents .
