@@ -189,14 +189,14 @@ export const TEAM_LIST = [
 		linkedInURL: 'https://www.linkedin.com/in/ashish-kolhe-10605b33',
 		name: 'Ashish Kolhe',
 		designation: 'Software Engineer',
-		description: 'Ashish Kolhe is a Software Professional with experience in architecting & building enterprise softwares from last 15 years. He is passionate about big data & data semantics.',
+		description: 'Ashish Kolhe is a software professional with experience in architecting & building enterprise softwares for last 17 years. He is passionate about big data & data semantics.',
 	},
 	{
 		image: TEAM_MEMBER_4,
 		linkedInURL: 'https://www.linkedin.com/in/bjp232004/',
 		name: 'Bhargav Patel',
 		designation: 'Software Engineer',
-		description: 'Bhargav Patel is a Software Professional with proven skills in spearheading cloud technology, front-end technologies, release automation process and application development in IT projects. He has lead technical deliveries in the past 15 years.',
+		description: 'Bhargav Patel is a software professional with proven skills in spearheading cloud technology, front-end technologies, release automation process and application development in IT projects. He has lead technical deliveries for past 15 years.',
 	},
 ];
 
