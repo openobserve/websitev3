@@ -1,6 +1,6 @@
 ---
 import { GoogleAnalytics } from 'astro-analytics';
-import { GITHUB_ICON, LINKEDIN_ICON, LOGO_ICON } from '../assets/images';
+import { GITHUB_ICON, LINKEDIN_ICON, TWITTER_ICON, LOGO_ICON } from '../assets/images';
 
 import {
   MENU_LISTS,
@@ -8,7 +8,8 @@ import {
   ZINC_DOCS_GET_STARTED_LINK,
   ZINC_DOCS_SERVER_LINK,
   GITHUB_REPO_LINK,
-  LINKEDIN_LINK
+  LINKEDIN_LINK,
+  TWITTER_LINK
 } from '../utils/constant.js';
 import ButtonLink from './ButtonLink.astro';
 ---
@@ -83,6 +84,12 @@ import ButtonLink from './ButtonLink.astro';
             <a rel="noreferrer noopener" href={LINKEDIN_LINK} title="LinkedIn"
               target="_blank">
               <img src={LINKEDIN_ICON} alt="LinkedIn">
+            </a>
+          </li>
+          <li>
+            <a rel="noreferrer noopener" href={TWITTER_LINK} title="Twitter"
+              target="_blank">
+              <img src={TWITTER_ICON} alt="Twitter">
             </a>
           </li>
         </ul>
