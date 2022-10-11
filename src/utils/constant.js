@@ -12,8 +12,10 @@ export const BLOGS_PATH = '/blog';
 
 // ZINC DOCS LINKS
 export const ZINC_DOCS_LINK = 'https://docs.zincsearch.com/';
-export const ZINC_DOCS_GET_STARTED_LINK = 'https://docs.zincsearch.com/02_getting-started/';
-export const ZINC_DOCS_SERVER_LINK = 'https://docs.zincsearch.com/API%20Reference/';
+export const ZINC_DOCS_GET_STARTED_LINK = 'https://docs.zincsearch.com/getting-started/';
+export const ZINC_DOCS_SERVER_LINK = 'https://docs.zincsearch.com/api/';
+
+export const ZINC_CLOUD_BETA_LINK = 'https://z9uzdkifovs.typeform.com/zinc-cloud';
 
 // GITHUB LINKS
 export const GITHUB_REPO_LINK = 'https://github.com/zinclabs/zinc';

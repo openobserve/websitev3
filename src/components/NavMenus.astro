@@ -1,5 +1,5 @@
 ---
-import { NAV_LISTS, ZINC_DOCS_LINK } from '../utils/constant.js';
+import { NAV_LISTS, ZINC_CLOUD_BETA_LINK } from '../utils/constant.js';
 
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.split("/")[1];
@@ -10,6 +10,6 @@ const currentPath = pathname.split("/")[1];
     <li class={currentPath === nav.id ? "active" : ""}><a rel="noreferrer noopener" href={nav.path}>{nav.name}</a></li>
   ))}
   <li class="getStarted">
-    <a rel="noreferrer noopener" href={ZINC_DOCS_LINK} class="btn btn--primary btn--short">Get Started</a>
+    <a rel="noreferrer noopener" href={ZINC_CLOUD_BETA_LINK} class="btn btn--primary btn--short">Join Cloud Beta</a>
   </li>
 </ul>
