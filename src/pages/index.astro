@@ -4,8 +4,6 @@ import {
  BANNER_IMG_1_2X,
  BANNER_IMG_2,
  BANNER_IMG_2_2X,
- BANNER_IMG_3,
- BANNER_IMG_3_2X,
  DEMO_SNAPSHOT_IMG,
  CLOSE_ICON,
  CODE_SNAPSHOT_IMG
@@ -29,7 +27,7 @@ import Subscription from '../components/Subscription.astro';
             <li class="carousel__slide">
               <div class="container">
                 <div class="container__left">
-                  <h1 class="head">Tired Of High Costs and the Complexity Of Your Log Systems?</h1>
+                  <h1 class="head">Tired Of High Cost And Complexity Of Your Log Systems.</h1>
                   <ButtonLink />
                 </div>
                 <div class="container__right">
@@ -44,14 +42,14 @@ import Subscription from '../components/Subscription.astro';
             <li class="carousel__slide">
               <div class="container">
                 <div class="container__left">
-                  <h1 class="head">Implement Search In Your Applications In Minutes</h1>
+                  <h1 class="head">1 TB ingest / month free</h1>
                   <ButtonLink />
                 </div>
                 <div class="container__right">
-                  <picture class="pic-two">
-                    <source media="(max-width:1199px)" srcset={BANNER_IMG_2} />
-                    <source media="(min-width:1200px)" srcset={BANNER_IMG_2_2X} />
-                    <img src={BANNER_IMG_2} alt="Home Banner 2" />
+                  <picture class="pic-one">
+                    <source media="(max-width:1199px)" srcset={BANNER_IMG_1} />
+                    <source media="(min-width:1200px)" srcset={BANNER_IMG_1_2X} />
+                    <img src={BANNER_IMG_1} alt="Home Banner 1" />
                   </picture>
                 </div>
               </div>
@@ -60,15 +58,15 @@ import Subscription from '../components/Subscription.astro';
               <div class="container">
                 <div class="container__left">
                   <h1 class="head">
-                    <div class="light">A Perfect</div> Edge Search Solution
+                    Default 30 day log retention
                   </h1>
                   <ButtonLink />
                 </div>
                 <div class="container__right">
-                  <picture class="pic-three">
-                    <source media="(max-width:1199px)" srcset={BANNER_IMG_3} />
-                    <source media="(min-width:1200px)" srcset={BANNER_IMG_3_2X} />
-                    <img src={BANNER_IMG_3} alt="Home Banner 3" />
+                  <picture class="pic-two">
+                    <source media="(max-width:1199px)" srcset={BANNER_IMG_2} />
+                    <source media="(min-width:1200px)" srcset={BANNER_IMG_2_2X} />
+                    <img src={BANNER_IMG_2} alt="Home Banner 2" />
                   </picture>
                 </div>
               </div>

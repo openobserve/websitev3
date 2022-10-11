@@ -14,9 +14,7 @@ categories:
 ---
 ZincSearch is a lightweight Elasticsearch replacement tool, with compatible Elasticsearch APIs, and comes with a UI to replace the Elasticsearch family of Kibana. Zinc is developed in Go and can be directly started and used with a single binary. Installation and use are much simpler than Elasticsearch, and resource consumption is also much lower than Elasticsearch.
 
-We just released version v0.2.7, download address:
-
-https://github.com/zinclabs/zinc/releases/tag/v0.2.7
+We just released version v0.2.7, download address: [https://github.com/zinclabs/zinc/releases/tag/v0.2.7](https://github.com/zinclabs/zinc/releases/tag/v0.2.7)
 
 We will try to maintain the frequency of releasing a version every two weeks in the future.
 
@@ -59,6 +57,7 @@ This interface queries whether the specified index exists, using the HEAD method
 ```json
 {"title": "Hello", "attr": "foo"}
 {"title": "World", "attr": "baa"}
+
 This interface is another bulk interface. The accepted input is one JSON document per line. Of course, it only supports insertion, not update and delete operations.
 ```
 
@@ -68,11 +67,11 @@ This interface is another bulk interface. The accepted input is one JSON documen
 
 ```json
 {
- "index": "indexName",
- "records": [
- {"title": "This is", "attr": "foo"},
- {"title": "Cool stuff", "attr": "baa"}
- ]
+  "index": "indexName",
+  "records": [
+    {"title": "This is", "attr": "foo"},
+    {"title": "Cool stuff", "attr": "baa"}
+  ]
 }
 ```
 This API is another bulk interface that accepts as input a standard JSON structure, an index name and multiple JSON documents .
