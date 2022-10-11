@@ -31,6 +31,7 @@ import GITHUB_ICON from './common/github_icon.svg';
 
 // SOCIAL ICON
 import LINKEDIN_ICON from './common/linkedin_icon.svg';
+import TWITTER_ICON from './common/twitter_icon.svg';
 
 // ABOUT_US
 import ABOUT_ZINC_SEARCH from './about-us/about_zincsearch_1.webp';
@@ -85,6 +86,7 @@ export {
   LOGO_ICON,
   GITHUB_ICON,
   LINKEDIN_ICON,
+  TWITTER_ICON,
   ABOUT_ZINC_SEARCH,
   WHY_ZINC_1,
   WHY_ZINC_2,

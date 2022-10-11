@@ -36,6 +36,7 @@ export const GITHUB_FORK_REPO_LINK = 'https://github.com/zinclabs/zinc/fork';
 
 // SOCIAL LINKS
 export const  LINKEDIN_LINK = 'https://www.linkedin.com/company/zinc-labs';
+export const TWITTER_LINK = 'https://twitter.com/zincsearchHQ';
 
 // MENU_LISTS
 export const MENU_LISTS = [
