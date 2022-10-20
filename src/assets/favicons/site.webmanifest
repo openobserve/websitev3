@@ -4,8 +4,8 @@
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
     "display": "standalone",
-    "orientation": "",
-    "start_url": "https://zincSearch.com",
+    "orientation": "portrait",
+    "start_url": ".",
     "scope": ".",
     "icons": [
         {
