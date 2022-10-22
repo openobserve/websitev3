@@ -25,5 +25,5 @@ While there are many libraries available for reading data from
 create external table t1 stored as parquet location "s3://ziox-data/single/fluent-bit/2022/10/06/00/6983579843673853953_73.parquet";
 select * from t1;
 
-select * from t1 where _timestamp<1665014754256085 and _timestamp665960392540758 ;
+select * from t1 where _timestamp&lt;1665014754256085 and _timestamp665960392540758 ;
 

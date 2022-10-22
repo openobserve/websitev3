@@ -178,7 +178,7 @@ export const TEAM_LIST = [
 		linkedInURL: 'https://www.linkedin.com/in/hiprabhat',
 		name: 'Prabhat Sharma',
 		designation: 'Founder & CEO',
-		description: 'Prabhat Sharma founded ZincSearch based on his learnings from years of his work at AWS, working with hundreds of startups, ISVs, and substantial customers who faced the challenge of searching logs and other application data.',
+		description: 'Prabhat Sharma is the founder & CEO of Zinc Labs Inc. He founded ZincSearch based on his learnings from years of his work at AWS, working with hundreds of startups, ISVs, and large customers who faced the challenge of searching logs and other application data.',
 	},
 	{
 		image: TEAM_MEMBER_2,
@@ -199,7 +199,7 @@ export const TEAM_LIST = [
 		linkedInURL: 'https://www.linkedin.com/in/bjp232004/',
 		name: 'Bhargav Patel',
 		designation: 'Software Engineer',
-		description: 'Bhargav Patel is a software professional with proven skills in spearheading cloud technology, front-end technologies, release automation process and application development in IT projects. He has lead technical deliveries for past 15 years.',
+		description: 'Bhargav Patel is a software professional with proven skills in spearheading cloud technology, front-end technologies, release automation process and application development in IT projects. He has led technical deliveries for past 15 years.',
 	},
 ];
 
