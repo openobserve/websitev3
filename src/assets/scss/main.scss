@@ -323,7 +323,7 @@ body.modal-open {
 				width: $video-width;
 
 				@include responsive_medium2small() {
-					height: $video-height / $video-width * 100vw;
+					height: calc($video-height / $video-width * 100vw);
 				}
 			}
 		}
@@ -1316,7 +1316,8 @@ body.modal-open {
 		&#about-us,
 		&#use-cases,
 		&#careers,
-		&#contact-us {
+		&#contact-us,
+		&.generic-page {
 			.header-container {
 				padding: 9.0625rem 0 3.625rem;
 			}
@@ -1363,3 +1364,62 @@ body.modal-open {
 		}
 	}
 }
+
+
+/* Common Style Overrides - Starts */
+// common margin classes
+.ma-none { margin: 0 !important; }
+.mt-none { margin-top: 0 !important; }
+.mb-none { margin-bottom: 0 !important; }
+.ma-sm { margin: 0.25rem !important; }
+.ma-md { margin: 0.5rem !important; }
+.ma-lg { margin: 1rem !important; }
+.ma-xl { margin: 2rem !important; }
+.mt-sm { margin-top: 0.25rem !important; }
+.mt-md { margin-top: 0.5rem !important; }
+.mt-lg { margin-top: 1rem !important; }
+.mt-xl { margin-top: 2rem !important; }
+.mb-sm { margin-bottom: 0.25rem !important; }
+.mb-md { margin-bottom: 0.5rem !important; }
+.mb-lg { margin-bottom: 1rem !important; }
+.mb-xl { margin-bottom: 2rem !important; }
+
+// common padding classes
+.pa-none { padding: 0 !important; }
+.pt-none { padding-top: 0 !important; }
+.pb-none { padding-bottom: 0 !important; }
+.pa-sm { padding: 0.25rem !important; }
+.pa-md { padding: 0.5rem !important; }
+.pa-lg { padding: 1rem !important; }
+.pa-xl { padding: 2rem !important; }
+.pt-sm { padding-top: 0.25rem !important; }
+.pt-md { padding-top: 0.5rem !important; }
+.pt-lg { padding-top: 1rem !important; }
+.pt-xl { padding-top: 2rem !important; }
+.pb-sm { padding-bottom: 0.25rem !important; }
+.pb-md { padding-bottom: 0.5rem !important; }
+.pb-lg { padding-bottom: 1rem !important; }
+.pb-xl { padding-bottom: 2rem !important; }
+
+ // can be used with anchor links
+.hover-line { border-bottom-color: transparent !important; }
+.hover-line:hover { border-bottom-color: currentColor !important; }
+
+// to change text color as per the docs
+.text-black { color: black !important; }
+.text-gray { color: #595959 !important; }
+
+// for text alignment changes
+.align-left { text-align: left !important; }
+.align-right { text-align: right !important; }
+.align-center { text-align: center !important; }
+
+// for text case changes
+.uppercase { text-transform: uppercase !important; }
+.lowercase { text-transform: lowercase !important; }
+.capitalize { text-transform: capitalize !important; }
+
+.text-bold { font-weight: bold !important; } // use <strong> tag instead of this class
+.text-italic { font-style: italic !important; } // use <em> tag instead of this class
+.text-underline { text-decoration: underline !important; } // use <u> tag instead of this class
+/* Common Style Overrides - Ends */
