@@ -7,6 +7,8 @@ import {
   DEFAULT_PATH,
   ZINC_DOCS_GET_STARTED_LINK,
   ZINC_DOCS_SERVER_LINK,
+  PRIVACY_POLICY_PATH,
+  TERMS_OF_SERVICE_PATH,
   GITHUB_REPO_LINK,
   LINKEDIN_LINK
 } from '../utils/constant.js';
@@ -63,6 +65,12 @@ import ButtonLink from './ButtonLink.astro';
             </li>
             <li>
               <ButtonLink hrefLink={ZINC_DOCS_SERVER_LINK} className={"bottomBorderHover"} title={"Server API"} />
+            </li>
+            <li>
+              <ButtonLink hrefLink={PRIVACY_POLICY_PATH} className={"bottomBorderHover"} title={"Privacy Policy"} />
+            </li>
+            <li>
+              <ButtonLink hrefLink={TERMS_OF_SERVICE_PATH} className={"bottomBorderHover"} title={"Terms Of Use"} />
             </li>
           </ul>
         </div>

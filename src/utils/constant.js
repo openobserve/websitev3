@@ -15,6 +15,10 @@ export const ZINC_DOCS_LINK = 'https://docs.zincsearch.com/';
 export const ZINC_DOCS_GET_STARTED_LINK = 'https://docs.zincsearch.com/02_getting-started/';
 export const ZINC_DOCS_SERVER_LINK = 'https://docs.zincsearch.com/API%20Reference/';
 
+// LEGAL PATHS
+export const PRIVACY_POLICY_PATH = '/legal/privacy-policy';
+export const TERMS_OF_SERVICE_PATH = '/legal/terms-of-service';
+
 // GITHUB LINKS
 export const GITHUB_REPO_LINK = 'https://github.com/zinclabs/zinc';
 export const GITHUB_FORK_REPO_LINK = 'https://github.com/zinclabs/zinc/fork';
