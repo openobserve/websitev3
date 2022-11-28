@@ -6,1272 +6,1420 @@
 @import './fonts';
 
 body {
-  @extend .poppins_regular;
+	@extend .poppins_regular;
 }
 
 body.modal-open {
-  position: relative;
-  overflow: hidden;
+	position: relative;
+	overflow: hidden;
 }
 
 .root {
-  @extend .poppins_regular;
-
-  header,
-  main,
-  footer {
-    display: block;
-  }
-
-  ul {
-    list-style: none;
-  }
-
-  a {
-    @include fontStyles($lineHeight: 1.375rem);
-    text-decoration: none;
-    display: inline-block;
-    @include transition;
-    color: $black;
-
-    &.noBorderHover {
-      border-bottom: $primary-border;
-
-      &:hover,
-      &.active {
-        border-bottom-color: transparent;
-      }
-    }
-
-    &.bottomBorderHover {
-      border-bottom: $link-border-placeholder;
-
-      &:hover,
-      &.active {
-        border-bottom-color: $primary;
-      }
-    }
-  }
-
-  img {
-    object-fit: cover;
-    max-width: 100%;
-    display: block;
-    height: auto;
-    border: none;
-  }
-
-  .textBold {
-    @include fontFamily($family: poppins_bold);
-  }
-
-  .btn {
-    @include borderRadius(6.25rem);
-    min-width: $btn-min-width;
-    @include transition;
-    text-align: center;
-    @include cursor;
-    display: block;
-    color: $white;
-    border: none;
-
-    &--tall {
-      @include fontStyles($weight: 500);
-      line-height: $btn-height;
-      height: $btn-height;
-    }
-
-    &--short {
-      @include fontStyles($weight: 500);
-      line-height: $header-height;
-      height: $header-height;
-    }
-
-    &--primary {
-      @include boxShadow;
-      background-color: $primary;
-
-      &:hover {
-        filter: brightness(1.1);
-      }
-    }
-
-    &--secondary {
-      @include boxShadow($color: rgba($black, 0.16));
-      background-color: $primary;
-
-      &:hover {
-        filter: brightness(1.1);
-      }
-    }
-
-    &[type="submit"] {
-      i {
-        display: none;
-      }
-
-      span {
-        @include fontStyles($weight: 500);
-      }
-
-      &.loading {
-        i {
-          display: inline-block;
-        }
-
-        span {
-          padding-left: 0.5rem;
-        }
-      }
-    }
-  }
-
-  #form-submit-message {
-    @include fontStyles;
-    line-height: 1.5rem;
-    font-size: 0.9rem;
-    display: none;
-
-    &.success {
-      color: green;
-    }
-
-    &.error {
-      color: $error-text;
-    }
-  }
-
-  .card {
-    @include flexBox($justify: flex-start, $direction: column);
-    @include borderRadius;
-
-    &--feature,
-    &--career {
-      border: $feature-card-border;
-      padding: 1.875rem 2.25rem;
-      min-height: 18.5rem;
-      text-align: center;
-
-      @include boxShadow($color: $box-shadow-color);
-      flex-basis: calc(33% - 0.5625rem);
-
-      @include responsive_tablet() {
-        flex-basis: calc(50% - 0.5625rem);
-      }
-
-      @include responsive_mobile() {
-        flex-basis: 100%;
-        min-height: auto;
-      }
-
-      &__icon {
-        min-height: 3.75rem;
-        min-width: 3.75rem;
-      }
-
-      .card__head {
-        margin-top: 1.5rem;
-      }
-    }
-
-    &--career {
-      min-height: 15rem;
-    }
-
-    &--codeSection {
-      @include flexBox($justify: flex-start, $align: flex-start, $direction: column);
-      flex-basis: calc(50% - 0.5625rem);
-      text-align: left;
-
-      .card__head {
-        @include fontStyles($size: 1rem, $weight: 600, $lineHeight: 1.5625rem);
-      }
-
-      .card__content {
-        @include fontStyles($size: 0.9rem, $lineHeight: 1.5rem);
-      }
-    }
-
-    &__icon {
-      min-height: 3.25rem;
-      min-width: 3.25rem;
-    }
-
-    &__head {
-      @include fontStyles($size: 1.125rem, $weight: 600, $lineHeight: 1.5rem);
-      margin: 0 0 0.75rem;
-      width: 100%;
-    }
-
-    &__content {
-      @include fontStyles($size: 0.9rem, $lineHeight: 1.375rem);
-    }
-  }
-
-  .modal {
-    background-color: rgba($black, 0.5);
-    user-select: none;
-    position: fixed;
-    z-index: 99999;
-    height: 100vh;
-    display: none;
-    width: 100vw;
-    left: 0;
-    top: 0;
-
-    &.show {
-      display: block;
-    }
-
-    &__container {
-      transform: translate(-50%, -50%);
-      position: absolute;
-      max-height: 90vh;
-      max-width: 90vw;
-      left: 50%;
-      top: 50%;
-    }
-
-    &__close {
-      @include borderRadius(50%);
-      position: absolute;
-      @include cursor;
-      display: block;
-      right: -10px;
-      border: none;
-      top: -10px;
-      z-index: 5;
-
-      img {
-        pointer-events: none;
-      }
-    }
-
-    &__content {
-      @include borderRadius($borderRadius: 0.5rem);
-      border: $popup-border;
-      position: absolute;
-      overflow: hidden;
-      height: 100%;
-      width: 100%;
-
-      iframe {
-        height: 100%;
-        width: 100%;
-        border: 0;
-      }
-    }
-
-    &#video-modal {
-      .modal__container {
-        height: $video-height;
-        width: $video-width;
-
-        @include responsive_medium2small() {
-          height: $video-height / $video-width * 100vw;
-        }
-      }
-    }
-  }
-
-  header {
-    @include fontStyles($lineHeight: $header-height);
-    position: fixed;
-    z-index: 999;
-    width: 100%;
-    left: 0;
-    top: 0;
-
-
-    @include responsive_desktop() {
-      padding-top: $header-top-spacing;
-      box-sizing: content-box;
-      height: $header-height;
-    }
-
-    @include responsive_medium2small() {
-      @include boxShadow($shadow: 0px 2px 2px, $color: rgba($header-shadow-color, 0.38));
-      height: $header-height-sticky;
-      background-color: $white;
-      @include transition;
-      @include flexBox;
-      position: sticky;
-      z-index: 9999;
-      padding: 0;
-      margin: 0;
-
-      .container {
-        width: 90vw;
-      }
-    }
-
-    .container,
-    .logo {
-      @include flexBox;
-
-      a {
-        white-space: nowrap;
-        display: block;
-
-        img {
-          max-height: 2.1875rem;
-          width: 12rem;
-
-          @include responsive_max(400px) {
-            width: 10rem;
-          }
-        }
-      }
-    }
-
-    nav {
-      position: relative;
-
-      @include responsive_desktop() {
-        .desktop {
-          @include flexBox($gap: 1rem);
-        }
-
-        .tabAndbelow {
-          display: none;
-        }
-      }
-
-      @include responsive_medium2small() {
-        .desktop {
-          display: none;
-        }
-
-        .tabAndbelow {
-          @include flexBox;
-
-          span {
-            margin: 0 1rem;
-          }
-        }
-      }
-
-      .github_actions {
-        @include flexBox($gap: 0.5rem);
-
-        span {
-          max-height: 1.75rem;
-          display: block;
-        }
-      }
-
-      .tabAndbelow {
-        &__actions {
-          @include flexBox($gap: 1.5rem);
-
-          @include responsive_medium2small() {
-            @include flexBox($gap: 2rem);
-          }
-
-          @include responsive_max(370px) {
-            @include flexBox($gap: 1.5rem);
-          }
-
-          span {
-            max-height: 1.75rem;
-            display: block;
-          }
-
-          .github_actions {
-            @include flexBox($gap: 1rem);
-
-            span {
-              margin: 0;
-            }
-
-            @include responsive_max(500px) {
-              span {
-                &:not(:first-of-type) {
-                  display: none;
-                }
-              }
-
-              @include flexBox($gap: 1rem);
-            }
-
-            @include responsive_max(400px) {
-              span {
-                margin: 0 0 3px;
-              }
-            }
-          }
-        }
-
-        .hamburger-menu {
-          position: relative;
-          @include cursor;
-          width: 32.5px;
-          height: 26px;
-
-          @include responsive_mobile() {
-            height: 23px;
-            width: 28px;
-          }
-
-          @include responsive_max(400px) {
-            height: 17.5px;
-            width: 20px;
-          }
-
-          @include flexBox($direction: column);
-
-          .line {
-            display: block;
-            height: 4px;
-            width: 100%;
-            border-radius: 10px;
-            background: #0e2431;
-            pointer-events: none;
-
-            &__one {
-              transform-origin: 0% 0%;
-              @include transition(0.4s);
-            }
-
-            &__two {
-              @include transition(0.2s);
-            }
-
-            &__three {
-              transform-origin: 0% 100%;
-              @include transition(0.4s);
-            }
-          }
-        }
-
-        &.is-active {
-          .hamburger-menu {
-            z-index: 10000;
-
-            .line {
-              &__one {
-                transform: rotate(45deg);
-              }
-
-              &__two {
-                opacity: 0;
-              }
-
-              &__three {
-                transform: rotate(-45deg);
-              }
-            }
-          }
-
-          .mobile-menu {
-            pointer-events: auto;
-            overflow: hidden;
-            max-width: 100vw;
-            opacity: 1;
-
-            .container {
-              transform: translateX(0);
-              @include transition;
-
-              li {
-                margin-bottom: 0;
-              }
-            }
-          }
-        }
-
-        &:not(.is-active) {
-          z-index: 2;
-
-          .mobile-menu {
-            transform: translateX(0);
-            pointer-events: none;
-            @include transition;
-          }
-        }
-
-        .mobile-menu {
-          pointer-events: none;
-          position: fixed;
-          padding: 0 2vw;
-          overflow: auto;
-          z-index: 9999;
-          height: 100vh;
-          width: 100vw;
-          top: 4.25rem;
-          opacity: 0;
-          left: 0;
-
-          .container {
-            @include borderRadius(0 0 1rem 1rem);
-            transform: translateX(100vh);
-            border: $feature-card-border;
-            padding: 0.5rem 1rem 1rem;
-            background-color: $white;
-            transition: all 0.3s;
-            max-width: 92vw;
-
-            ul {
-              @include flexBox($direction: column);
-              width: 100%;
-
-              li {
-                margin-bottom: 0.5rem;
-                position: relative;
-                width: 100%;
-
-                &:not(.getStarted)::after {
-                  background-color: $feature-card-border-color;
-                  @include borderRadius;
-                  position: relative;
-                  display: block;
-                  content: "";
-                  height: 1px;
-                  width: 100%;
-                  bottom: 0;
-                }
-
-                &.active::after {
-                  background-color: $primary;
-                  height: 2px;
-                }
-
-                a {
-                  @include fontStyles($lineHeight: 3rem);
-                }
-
-                &.getStarted {
-                  margin-top: 1.5rem;
-
-                  a {
-                    line-height: $header-height;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-
-      ul {
-        @include flexBox;
-
-        li {
-          position: relative;
-          margin: 0 0.7rem;
-
-          &:not(.getStarted) {
-            &::after {
-              background-color: $primary;
-              width: calc(100% + 10px);
-              @include borderRadius;
-              @include transition;
-              position: absolute;
-              display: none;
-              bottom: -8px;
-              height: 3px;
-              left: -5px;
-              content: "";
-            }
-
-            &.active,
-            &:hover {
-              &::after {
-                display: block;
-              }
-            }
-          }
-
-          &.getStarted {
-            margin-right: 0;
-          }
-        }
-      }
-    }
-
-    &.sticky {
-      @include boxShadow($shadow: 0px 2px 2px, $color: rgba($header-shadow-color, 0.38));
-      height: $header-height-sticky;
-      background-color: $white;
-      @include transition;
-      @include flexBox;
-      position: sticky;
-      z-index: 9999;
-      padding: 0;
-      margin: 0;
-
-      .container {
-        width: $container-width;
-      }
-
-      nav {
-        ul {
-          @include flexBox;
-
-          li {
-            position: relative;
-            margin: 0 0.75rem;
-
-            &.getStarted {
-              margin-right: 0;
-            }
-
-            &::after {
-              bottom: -23px;
-              height: 3px;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .noMargin {
-    margin: 0 !important;
-  }
-
-  section {
-    overflow: hidden;
-    max-width: 100vw;
-    padding: 5rem 0;
-
-    @include responsive_mobile() {
-      padding: 3rem 0;
-
-      br {
-        display: none;
-      }
-    }
-
-    &.noPadding {
-      padding: 0;
-    }
-  }
-
-  .container {
-    max-width: $container-width;
-    margin: auto;
-
-    @include responsive_medium2small() {
-      max-width: 90vw;
-    }
-
-    .head {
-      text-align: center;
-
-      h2 {
-        margin-bottom: 0.75rem;
-        @extend %h2;
-      }
-
-      p {
-        @include fontStyles;
-      }
-    }
-
-  }
-
-  .features,
-  .careers {
-    .content {
-      @include flexBox($justify: flex-start, $align: normal, $wrap: wrap, $gap: 1.5625rem 1.125rem);
-      margin-top: 3.25rem;
-    }
-  }
-
-  .video {
-    background: url('../images/home/video_bg.webp') no-repeat center center;
-    background-size: cover;
-
-    .container {
-      @include flexBox($justify: center);
-      max-height: $video-height;
-      max-width: $video-width;
-      background-size: cover;
-      height: 100%;
-
-      .content {
-        @include boxShadow($shadow: 0px 20px 25px, $color: rgba($video-shadow, 0.75));
-        @include borderRadius(0.5rem);
-        background-color: $video-bg;
-        border: $popup-border;
-
-        @include responsive_medium2small() {
-          max-width: 90vw;
-        }
-
-        .btn-show-modal {
-          @include borderRadius(0.5rem);
-          position: relative;
-          @include cursor;
-          display: block;
-          border: none;
-
-          & * {
-            pointer-events: none;
-          }
-
-          .play-icon {
-            transform: translate(-50%, -50%);
-            @include transition;
-            position: absolute;
-            z-index: 2;
-            left: 50%;
-            top: 50%;
-          }
-
-          picture {
-            @include transition;
-          }
-
-          &:hover {
-            .play-icon {
-              filter: brightness(2);
-            }
-
-            picture {
-              filter: brightness(0.8);
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .codeSection {
-    margin-bottom: 3rem;
-    overflow: hidden;
-
-    .container {
-      @include flexBox($gap: 3.25rem);
-
-      @include responsive_medium2small() {
-        @include flexBox($direction: column-reverse, $gap: 5rem);
-      }
-
-      .content__left,
-      .content__right {
-        flex: 1;
-      }
-
-      .content__left {
-        @include responsive_medium2small() {
-          width: 80vw;
-        }
-      }
-
-      .content__right {
-        position: relative;
-
-        picture {
-          position: relative;
-          z-index: 10;
-        }
-
-        &::before,
-        &::after {
-          background: url('../images/home/dotted_bg.webp') no-repeat center center;
-          position: absolute;
-          width: 18.5625rem;
-          height: 9.25rem;
-          display: block;
-          content: "";
-          z-index: -1;
-        }
-
-        &::before {
-          left: -3.3rem;
-          top: -3rem;
-        }
-
-        &::after {
-          bottom: -3rem;
-          right: -2.8rem;
-        }
-      }
-
-      .head {
-        text-align: left;
-
-        h2 {
-          margin-bottom: 1.25rem;
-        }
-      }
-
-      .content {
-        @include flexBox($align: normal, $gap: 5rem);
-        margin-top: 1.75rem;
-
-        @include responsive_mobile() {
-          @include flexBox($direction: column, $gap: 2.5rem);
-
-          .card--codeSection {
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
-
-  .faqs,
-  .hirings {
-    background-color: $primary-light;
-
-    .container {
-      @include flexBox($justify: center, $direction: column, $gap: 2.5rem);
-
-      .content {
-
-        .faq,
-        .hiring {
-          width: $faqs-width;
-          padding: 1.25rem;
-          max-width: 90vw;
-        }
-      }
-    }
-
-    &__container {
-
-      .faq,
-      .hiring,
-      .collapsible {
-        @include boxShadow($shadow: 0px 4px 25px, $color: $faq-shadow-color);
-        @include borderRadius(0.125rem);
-        background-color: $white;
-        margin-bottom: 0.875rem;
-        @include fontStyles;
-        @include transition;
-
-        &__head {
-          @include flexBox;
-
-          &__label {
-            @include fontStyles;
-          }
-
-          &__action {
-            background: transparent url('../images/common/minus.svg') no-repeat center center;
-            @include transition(0.1s);
-            @include cursor;
-            height: 1.25rem;
-            width: 1.25rem;
-            border: none;
-
-            &:hover {
-              filter: brightness(0.8);
-            }
-          }
-        }
-
-        &__body {
-          margin-top: 0.625rem;
-          @include transition;
-          height: auto;
-
-          p {
-            @include fontStyles($size: 0.875rem, $lineHeight: 1.375rem);
-          }
-        }
-
-        &--collapsed {
-          margin-bottom: 0.375rem;
-
-          .hiring__head,
-          .faq__head {
-            &__action {
-              background: transparent url('../images/common/plus.svg') no-repeat center center;
-            }
-          }
-
-          .hiring__body,
-          .faq__body {
-            @include transition;
-            visibility: hidden;
-            overflow: hidden;
-            margin-top: 0;
-            height: 0;
-          }
-        }
-      }
-
-      .faq {
-        &__body {
-          p {
-            color: $text-gray;
-          }
-        }
-
-        &__head {
-          &__label {
-            @include fontStyles($weight: 500);
-          }
-        }
-      }
-
-      .hiring {
-        &__head {
-          &__label {
-            @include fontStyles($weight: 600);
-          }
-        }
-      }
-    }
-  }
-
-  .demo {
-    margin-bottom: 2.5rem;
-
-    @include responsive_mobile() {
-      margin-bottom: 0;
-    }
-
-    .container {
-      background: $primary-light url('../images/home/demo_bg.webp') no-repeat center center;
-      background-size: cover;
-
-      @include flexBox($justify: flex-end);
-      min-height: $demo-height;
-
-      @include responsive_tablet() {
-        min-height: $demo-height-tablet;
-      }
-
-      @include responsive_mobile() {
-        padding: 3rem 0 0 0;
-      }
-
-      .content {
-        min-height: $demo-height;
-        position: relative;
-        @include flexBox;
-        width: 100%;
-
-        @include responsive_medium2small() {
-          min-height: $demo-height-tablet;
-        }
-
-        @include responsive_mobile() {
-          @include flexBox($direction: column, $gap: 2rem);
-          padding-bottom: 3rem;
-        }
-
-        &__left {
-          margin-left: 1.625rem;
-          align-self: flex-end;
-
-          @include responsive_tablet() {
-            margin-right: 1.625rem;
-          }
-
-          @include responsive_mobile() {
-            margin-left: 0;
-          }
-        }
-
-        &__right {
-          @include flexBox($justify: center, $direction: column);
-          margin-right: 7.125rem;
-          text-align: center;
-          max-width: 14rem;
-          height: 100%;
-
-          @include responsive_tablet() {
-            margin-right: 3rem;
-          }
-
-          @include responsive_mobile() {
-            margin-right: 0;
-          }
-
-          h2 {
-            margin-bottom: 0.75rem;
-            @extend %h2;
-          }
-
-          .btn {
-            min-width: 10.75rem;
-          }
-        }
-      }
-    }
-  }
-
-  .companies {
-    border-top: $separator-companies-border;
-  }
-
-  .subscribe {
-    background: $black url('../images/home/subscriber_bg.webp') no-repeat center center;
-    background-size: cover;
-
-    padding: 4rem 0;
-    color: $white;
-
-    .container {
-      text-align: center;
-
-      input[type="text"],
-      input[type="email"] {
-        background: $white url('../images/home/email_icon.svg') no-repeat 1.25rem center;
-        outline: $link-border-placeholder;
-        @include borderRadius(6.25rem);
-        padding: 0 1.25rem 0 3.75rem;
-        margin-top: 2.875rem;
-        height: $btn-height;
-        min-width: 27.75rem;
-        color: $text-input;
-        border: none;
-
-        @include responsive_mobile() {
-          min-width: 90vw;
-        }
-
-        &.invalid {
-          outline-color: $error-text;
-        }
-
-        &.valid {
-          outline-color: $primary;
-        }
-      }
-
-      //#form-submit-message {
-      //  text-shadow: 1px 1px 1px $black;
-      //  visibility: hidden;
-      //  min-height: 1.5rem;
-      //  display: block;
-
-      //  .success {
-      //    color: #84D484;
-      //  }
-      //}
-
-      h2 {
-        margin-bottom: 1.25rem;
-      }
-
-      p {
-        @include fontStyles($size: 1.125rem);
-      }
-
-      .btn {
-        margin: 1.625rem auto auto;
-        min-width: 10rem;
-
-        margin-top: 3rem;
-        max-width: 10rem;
-      }
-    }
-  }
-
-  footer {
-    background-color: $primary-light;
-
-    .topFooter {
-      padding: 3.75rem 0;
-
-      .container {
-        @include flexBox($justify: flex-start, $align: flex-start, $gap: 10.5rem);
-
-        @include responsive_mobile() {
-          @include flexBox($direction: column, $gap: 3rem);
-        }
-
-        @include responsive_tablet() {
-          gap: 14vw;
-        }
-
-        .column {
-          @include responsive_mobile() {
-            width: 90vw;
-          }
-
-          .head {
-            min-height: 2.375rem;
-            text-align: left;
-
-            h4 {
-              line-height: 2.375rem;
-            }
-
-            .logo {
-              @include flexBox;
-
-              a {
-                display: block;
-
-                img {
-                  max-height: 2.375rem;
-                  width: 12rem;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-
-    .bottomFooter {
-      border-top: $separator-footer-border;
-
-      .container {
-        height: $bottom-footer-height;
-        @include flexBox;
-
-        @include responsive_mobile() {
-          @include flexBox($direction: column, $gap: 1rem);
-          height: auto;
-          padding: 1.5rem 0;
-        }
-
-        ;
-
-        .column {
-          width: auto;
-          padding: 0;
-
-          p {
-            @extend %footerParagraph;
-
-            @include responsive_mobile() {
-              text-align: center;
-            }
-          }
-
-          .socialMedia {
-            @include flexBox($gap: 0.75rem);
-          }
-        }
-      }
-    }
-
-    .container {
-      .column {
-        .head {
-          @include fontStyles($size: 1.125rem, $lineHeight: 1.5625rem);
-          margin-bottom: 2.0625rem;
-
-          @include responsive_mobile() {
-            margin-bottom: 1.5rem;
-          }
-
-          h4 {
-            @include fontStyles($size: 1.125rem, $weight: 600, $lineHeight: 1.5625rem);
-          }
-        }
-
-        &:first-of-type {
-          .content {
-            a {
-              @include fontStyles($size: 0.875rem, $lineHeight: 1.25rem);
-            }
-          }
-        }
-
-        .content {
-          @include fontStyles($size: 0.875rem, $lineHeight: 1.375rem);
-
-          p {
-            @extend %footerParagraph;
-            margin-top: 2.0625rem;
-          }
-
-          a {
-            @include fontStyles($size: 0.875rem, $lineHeight: 1.625rem);
-          }
-
-          ul {
-            list-style: none;
-
-            li {
-              @include fontStyles($lineHeight: 1.75rem);
-              position: relative;
-
-              margin-bottom: 0.35rem;
-
-              &::before {
-                background: url('../images/common/link_arrow.svg') no-repeat center center;
-                transform: translateY(0.0625rem);
-                display: inline-block;
-                @include transition;
-                margin-right: 1rem;
-                height: 0.75rem;
-                width: 0.5rem;
-                content: "";
-              }
-
-              &:hover::before {
-                margin-right: 0.75rem;
-                margin-left: 0.25rem;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .home-banner {
-    background: $primary-light url('../images/home/home_bg_banner.webp') no-repeat top left;
-    background-size: cover;
-
-    height: $banner-height;
-
-    @include responsive_tablet() {
-      min-height: $banner-height-tablet;
-    }
-
-    @include responsive_mobile() {
-      min-height: $banner-height-mobile;
-    }
-  }
-
-  // Sub-Header Stylesheet for pages
-  main {
-
-    &#about-us,
-    &#use-cases,
-    &#careers,
-    &#contact-us {
-      .header-container {
-        padding: 9.0625rem 0 3.625rem;
-      }
-    }
-
-    & {
-      @include responsive_medium2small() {
-        .header-container {
-          padding: 4rem 0 !important;
-        }
-      }
-    }
-  }
-
-  .header-wrapper {
-    background: $primary-light url('../images/home/home_bg_banner.webp') no-repeat top left;
-    background-size: cover;
-
-    width: 100%;
-
-    .header-container {
-      align-items: center;
-      justify-content: center;
-      display: flex;
-      flex-direction: column;
-
-      h3 {
-        @include fontStyles($size: 2.25rem, $weight: 600, $lineHeight: 3.4375rem);
-        color: $black;
-      }
-
-      p {
-        @include fontStyles($size: 1.125rem, $lineHeight: 1.875rem);
-        color: $header-p-gray;
-        max-width: 844px;
-        text-align: center;
-        margin-top: 1rem;
-      }
-    }
-  }
+	@extend .poppins_regular;
+
+	header,
+	main,
+	footer {
+		display: block;
+	}
+
+	ul {
+		list-style: none;
+	}
+
+	a {
+		@include fontStyles($lineHeight: 1.375rem);
+		text-decoration: none;
+		display: inline-block;
+		@include transition;
+		color: $black;
+
+		&.noBorderHover {
+			border-bottom: $primary-border;
+
+			&:hover,
+			&.active {
+				border-bottom-color: transparent;
+			}
+		}
+
+		&.bottomBorderHover {
+			border-bottom: $link-border-placeholder;
+
+			&:hover,
+			&.active {
+				border-bottom-color: $primary;
+			}
+		}
+	}
+
+	img {
+		object-fit: cover;
+		max-width: 100%;
+		display: block;
+		height: auto;
+		border: none;
+	}
+
+	.textBold {
+		@include fontFamily($family: poppins_bold);
+	}
+
+	.btn {
+		@include borderRadius(6.25rem);
+		min-width: $btn-min-width;
+		@include transition;
+		text-align: center;
+		@include cursor;
+		display: block;
+		color: $white;
+		border: none;
+
+		&--tall {
+			@include fontStyles($weight: 500);
+			line-height: $btn-height;
+			height: $btn-height;
+		}
+
+		&--short {
+			@include fontStyles($weight: 500);
+			line-height: $header-height;
+			height: $header-height;
+		}
+
+		&--primary {
+			@include boxShadow;
+			background-color: $primary;
+
+			&:hover {
+				filter: brightness(1.1);
+			}
+		}
+
+		&--secondary {
+			@include boxShadow($color: rgba($black, 0.16));
+			background-color: $primary;
+
+			&:hover {
+				filter: brightness(1.1);
+			}
+		}
+
+		&[type='submit'] {
+			i {
+				display: none;
+			}
+
+			span {
+				@include fontStyles($weight: 500);
+			}
+
+			&.loading {
+				i {
+					display: inline-block;
+				}
+
+				span {
+					padding-left: 0.5rem;
+				}
+			}
+		}
+	}
+
+	#announcement-banner {
+		background-color: $announcement-banner;
+		position: relative;
+		z-index: 99999;
+
+		.container {
+			text-align: center;
+			padding: 0.75rem;
+
+			p {
+				@include fontStyles($lineHeight: 1.375rem);
+				line-height: 1.375rem;
+				color: $white;
+
+				a {
+					color: $announcement-anchor;
+				}
+			}
+		}
+	}
+
+	#form-submit-message {
+		@include fontStyles;
+		line-height: 1.5rem;
+		font-size: 0.9rem;
+		display: none;
+
+		&.success {
+			color: green;
+		}
+
+		&.error {
+			color: $error-text;
+		}
+	}
+
+	.card {
+		@include flexBox($justify: flex-start, $direction: column);
+		@include borderRadius;
+
+		&--team,
+		&--feature,
+		&--career {
+			border: $feature-card-border;
+			padding: 1.875rem 2.25rem;
+			min-height: 18.5rem;
+			text-align: center;
+
+			@include boxShadow($color: $box-shadow-color);
+			flex-basis: calc(33% - 0.5625rem);
+
+			@include responsive_tablet() {
+				flex-basis: calc(50% - 0.5625rem);
+			}
+
+			@include responsive_mobile() {
+				flex-basis: 100%;
+				min-height: auto;
+			}
+
+			&__icon {
+				min-height: 3.75rem;
+				min-width: 3.75rem;
+			}
+
+			.card__head {
+				margin-top: 1.5rem;
+			}
+		}
+
+		&--career {
+			min-height: 15rem;
+		}
+
+		&--team {
+			flex-basis: clamp(300px, 100%, 350px);
+			border: $separator-footer-border;
+      backdrop-filter: blur(10px);
+
+			.card__icon {
+        background-color: rgba($white, 0.25);
+				outline: $separator-footer-border;
+				width: clamp(130px, 180px, 60%);
+				@include borderRadius(50%);
+				position: relative;
+				padding: 0.5rem;
+			}
+
+			.name {
+				@include fontStyles($size: 1.25rem);
+			}
+			.designation {
+				@include fontStyles($size: 0.8rem, $style: italic);
+			}
+			.linkedin-icon {
+				@include borderRadius(50%);
+				outline: $popup-border;
+				position: absolute;
+				bottom: 1rem;
+				right: 0;
+			}
+		}
+
+		&--codeSection {
+			@include flexBox(
+				$justify: flex-start,
+				$align: flex-start,
+				$direction: column
+			);
+			flex-basis: calc(50% - 0.5625rem);
+			text-align: left;
+
+			.card__head {
+				@include fontStyles($size: 1rem, $weight: 600, $lineHeight: 1.5625rem);
+			}
+
+			.card__content {
+				@include fontStyles($size: 0.9rem, $lineHeight: 1.5rem);
+			}
+		}
+
+		&__icon {
+			min-height: 3.25rem;
+			min-width: 3.25rem;
+		}
+
+		&__head {
+			@include fontStyles($size: 1.125rem, $weight: 600, $lineHeight: 1.5rem);
+			margin: 0 0 0.75rem;
+			width: 100%;
+		}
+
+		&__content {
+			@include fontStyles($size: 0.9rem, $lineHeight: 1.375rem);
+		}
+	}
+
+	.modal {
+		background-color: rgba($black, 0.5);
+		user-select: none;
+		position: fixed;
+		z-index: 99999;
+		height: 100vh;
+		display: none;
+		width: 100vw;
+		left: 0;
+		top: 0;
+
+		&.show {
+			display: block;
+		}
+
+		&__container {
+			transform: translate(-50%, -50%);
+			position: absolute;
+			max-height: 90vh;
+			max-width: 90vw;
+			left: 50%;
+			top: 50%;
+		}
+
+		&__close {
+			@include borderRadius(50%);
+			position: absolute;
+			@include cursor;
+			display: block;
+			right: -10px;
+			border: none;
+			top: -10px;
+			z-index: 5;
+
+			img {
+				pointer-events: none;
+			}
+		}
+
+		&__content {
+			@include borderRadius($borderRadius: 0.5rem);
+			border: $popup-border;
+			position: absolute;
+			overflow: hidden;
+			height: 100%;
+			width: 100%;
+
+			iframe {
+				height: 100%;
+				width: 100%;
+				border: 0;
+			}
+		}
+
+		&#video-modal {
+			.modal__container {
+				height: $video-height;
+				width: $video-width;
+
+				@include responsive_medium2small() {
+					height: calc($video-height / $video-width * 100vw);
+				}
+			}
+		}
+	}
+
+	header {
+		@include fontStyles($lineHeight: $header-height);
+		position: fixed;
+		z-index: 999;
+		width: 100%;
+		left: 0;
+		top: 0;
+
+		@include responsive_desktop() {
+			padding-top: $header-top-spacing;
+			box-sizing: content-box;
+			height: $header-height;
+
+			&.home {
+				padding-top: 3.6875rem;
+			}
+		}
+
+		@include responsive_medium2small() {
+			@include boxShadow(
+				$shadow: 0px 2px 2px,
+				$color: rgba($header-shadow-color, 0.38)
+			);
+			height: $header-height-sticky;
+			background-color: $white;
+			@include transition;
+			@include flexBox;
+			position: sticky;
+			z-index: 9999;
+			padding: 0;
+			margin: 0;
+
+			.container {
+				width: 90vw;
+			}
+		}
+
+		.container,
+		.logo {
+			@include flexBox;
+
+			a {
+				white-space: nowrap;
+				display: block;
+
+				img {
+					max-height: 2.1875rem;
+					width: 12rem;
+
+					@include responsive_max(400px) {
+						width: 10rem;
+					}
+				}
+			}
+		}
+
+		nav {
+			position: relative;
+
+			@include responsive_desktop() {
+				.desktop {
+					@include flexBox($gap: 1rem);
+				}
+
+				.tabAndbelow {
+					display: none;
+				}
+			}
+
+			@include responsive_medium2small() {
+				.desktop {
+					display: none;
+				}
+
+				.tabAndbelow {
+					@include flexBox;
+
+					span {
+						margin: 0 1rem;
+					}
+				}
+			}
+
+			.github_actions {
+				@include flexBox($gap: 0.5rem);
+
+				span {
+					max-height: 1.75rem;
+					display: block;
+				}
+			}
+
+			.tabAndbelow {
+				&__actions {
+					@include flexBox($gap: 1.5rem);
+
+					@include responsive_medium2small() {
+						@include flexBox($gap: 2rem);
+					}
+
+					@include responsive_max(370px) {
+						@include flexBox($gap: 1.5rem);
+					}
+
+					span {
+						max-height: 1.75rem;
+						display: block;
+					}
+
+					.github_actions {
+						@include flexBox($gap: 1rem);
+
+						span {
+							margin: 0;
+						}
+
+						@include responsive_max(500px) {
+							span {
+								&:not(:first-of-type) {
+									display: none;
+								}
+							}
+
+							@include flexBox($gap: 1rem);
+						}
+
+						@include responsive_max(400px) {
+							span {
+								margin: 0 0 3px;
+							}
+						}
+					}
+				}
+
+				.hamburger-menu {
+					position: relative;
+					@include cursor;
+					width: 32.5px;
+					height: 26px;
+
+					@include responsive_mobile() {
+						height: 23px;
+						width: 28px;
+					}
+
+					@include responsive_max(400px) {
+						height: 17.5px;
+						width: 20px;
+					}
+
+					@include flexBox($direction: column);
+
+					.line {
+						display: block;
+						height: 4px;
+						width: 100%;
+						border-radius: 10px;
+						background: #0e2431;
+						pointer-events: none;
+
+						&__one {
+							transform-origin: 0% 0%;
+							@include transition(0.4s);
+						}
+
+						&__two {
+							@include transition(0.2s);
+						}
+
+						&__three {
+							transform-origin: 0% 100%;
+							@include transition(0.4s);
+						}
+					}
+				}
+
+				&.is-active {
+					.hamburger-menu {
+						z-index: 10000;
+
+						.line {
+							&__one {
+								transform: rotate(45deg);
+							}
+
+							&__two {
+								opacity: 0;
+							}
+
+							&__three {
+								transform: rotate(-45deg);
+							}
+						}
+					}
+
+					.mobile-menu {
+						pointer-events: auto;
+						overflow: hidden;
+						max-width: 100vw;
+						opacity: 1;
+
+						.container {
+							transform: translateX(0);
+							@include transition;
+
+							li {
+								margin-bottom: 0;
+							}
+						}
+					}
+				}
+
+				&:not(.is-active) {
+					z-index: 2;
+
+					.mobile-menu {
+						transform: translateX(0);
+						pointer-events: none;
+						@include transition;
+					}
+				}
+
+				.mobile-menu {
+					pointer-events: none;
+					position: fixed;
+					padding: 0 2vw;
+					overflow: auto;
+					z-index: 9999;
+					height: 100vh;
+					width: 100vw;
+					top: 4.25rem;
+					opacity: 0;
+					left: 0;
+
+					.container {
+						@include borderRadius(0 0 1rem 1rem);
+						transform: translateX(100vh);
+						border: $feature-card-border;
+						padding: 0.5rem 1rem 1rem;
+						background-color: $white;
+						transition: all 0.3s;
+						max-width: 92vw;
+
+						ul {
+							@include flexBox($direction: column);
+							width: 100%;
+
+							li {
+								margin-bottom: 0.5rem;
+								position: relative;
+								width: 100%;
+
+								&:not(.getStarted)::after {
+									background-color: $feature-card-border-color;
+									@include borderRadius;
+									position: relative;
+									display: block;
+									content: '';
+									height: 1px;
+									width: 100%;
+									bottom: 0;
+								}
+
+								&.active::after {
+									background-color: $primary;
+									height: 2px;
+								}
+
+								a {
+									@include fontStyles($lineHeight: 3rem);
+								}
+
+								&.getStarted {
+									margin-top: 1.5rem;
+
+									a {
+										line-height: $header-height;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			ul {
+				@include flexBox;
+
+				li {
+					position: relative;
+					margin: 0 0.7rem;
+
+					&:not(.getStarted) {
+						&::after {
+							background-color: $primary;
+							width: calc(100% + 10px);
+							@include borderRadius;
+							@include transition;
+							position: absolute;
+							display: none;
+							bottom: -8px;
+							height: 3px;
+							left: -5px;
+							content: '';
+						}
+
+						&.active,
+						&:hover {
+							&::after {
+								display: block;
+							}
+						}
+					}
+
+					&.getStarted {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+
+		&.sticky {
+			@include boxShadow(
+				$shadow: 0px 2px 2px,
+				$color: rgba($header-shadow-color, 0.38)
+			);
+			height: $header-height-sticky;
+			background-color: $white;
+			@include transition;
+			@include flexBox;
+			position: sticky;
+			z-index: 9999;
+			padding: 0;
+			margin: 0;
+
+			.container {
+				width: $container-width;
+			}
+
+			nav {
+				ul {
+					@include flexBox;
+
+					li {
+						position: relative;
+						margin: 0 0.75rem;
+
+						&.getStarted {
+							margin-right: 0;
+						}
+
+						&::after {
+							bottom: -23px;
+							height: 3px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.noMargin {
+		margin: 0 !important;
+	}
+
+	section {
+		overflow: hidden;
+		max-width: 100vw;
+		padding: 5rem 0;
+
+		@include responsive_mobile() {
+			padding: 3rem 0;
+
+			br {
+				display: none;
+			}
+		}
+
+		&.noPadding {
+			padding: 0;
+		}
+	}
+
+	.container {
+		max-width: $container-width;
+		margin: auto;
+
+		@include responsive_medium2small() {
+			max-width: 90vw;
+		}
+
+		.head {
+			text-align: center;
+
+			h2 {
+				margin-bottom: 0.75rem;
+				@extend %h2;
+			}
+
+			p {
+				@include fontStyles;
+			}
+		}
+	}
+
+	.features,
+	.careers {
+		.content {
+			@include flexBox(
+				$justify: flex-start,
+				$align: normal,
+				$wrap: wrap,
+				$gap: 1.5625rem 1.125rem
+			);
+			margin-top: 3.25rem;
+		}
+	}
+
+	.video {
+		background: url('../images/home/video_bg.webp') no-repeat center center;
+		background-size: cover;
+
+		.container {
+			@include flexBox($justify: center);
+			max-height: $video-height;
+			max-width: $video-width;
+			background-size: cover;
+			height: 100%;
+
+			.content {
+				@include boxShadow(
+					$shadow: 0px 20px 25px,
+					$color: rgba($video-shadow, 0.75)
+				);
+				@include borderRadius(0.5rem);
+				background-color: $video-bg;
+				border: $popup-border;
+
+				@include responsive_medium2small() {
+					max-width: 90vw;
+				}
+
+				.btn-show-modal {
+					@include borderRadius(0.5rem);
+					position: relative;
+					@include cursor;
+					display: block;
+					border: none;
+
+					& * {
+						pointer-events: none;
+					}
+
+					.play-icon {
+						transform: translate(-50%, -50%);
+						@include transition;
+						position: absolute;
+						z-index: 2;
+						left: 50%;
+						top: 50%;
+					}
+
+					picture {
+						@include transition;
+					}
+
+					&:hover {
+						.play-icon {
+							filter: brightness(2);
+						}
+
+						picture {
+							filter: brightness(0.8);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.codeSection {
+		margin-bottom: 3rem;
+		overflow: hidden;
+
+		.container {
+			@include flexBox($gap: 3.25rem);
+
+			@include responsive_medium2small() {
+				@include flexBox($direction: column-reverse, $gap: 5rem);
+			}
+
+			.content__left,
+			.content__right {
+				flex: 1;
+			}
+
+			.content__left {
+				@include responsive_medium2small() {
+					width: 80vw;
+				}
+			}
+
+			.content__right {
+				position: relative;
+
+				picture {
+					position: relative;
+					z-index: 10;
+				}
+
+				&::before,
+				&::after {
+					background: url('../images/home/dotted_bg.webp') no-repeat center
+						center;
+					position: absolute;
+					width: 18.5625rem;
+					height: 9.25rem;
+					display: block;
+					content: '';
+					z-index: -1;
+				}
+
+				&::before {
+					left: -3.3rem;
+					top: -3rem;
+				}
+
+				&::after {
+					bottom: -3rem;
+					right: -2.8rem;
+				}
+			}
+
+			.head {
+				text-align: left;
+
+				h2 {
+					margin-bottom: 1.25rem;
+				}
+			}
+
+			.content {
+				@include flexBox($align: normal, $gap: 5rem);
+				margin-top: 1.75rem;
+
+				@include responsive_mobile() {
+					@include flexBox($direction: column, $gap: 2.5rem);
+
+					.card--codeSection {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+
+	.faqs,
+	.hirings {
+		background-color: $primary-light;
+
+		.container {
+			@include flexBox($justify: center, $direction: column, $gap: 2.5rem);
+
+			.content {
+				.faq,
+				.hiring {
+					width: $faqs-width;
+					padding: 1.25rem;
+					max-width: 90vw;
+				}
+			}
+		}
+
+		&__container {
+			.faq,
+			.hiring,
+			.collapsible {
+				@include boxShadow($shadow: 0px 4px 25px, $color: $faq-shadow-color);
+				@include borderRadius(0.125rem);
+				background-color: $white;
+				margin-bottom: 0.875rem;
+				@include fontStyles;
+				@include transition;
+
+				&__head {
+					@include flexBox;
+
+					&__label {
+						@include fontStyles;
+					}
+
+					&__action {
+						background: transparent url('../images/common/minus.svg') no-repeat
+							center center;
+						@include transition(0.1s);
+						@include cursor;
+						height: 1.25rem;
+						width: 1.25rem;
+						border: none;
+
+						&:hover {
+							filter: brightness(0.8);
+						}
+					}
+				}
+
+				&__body {
+					margin-top: 0.625rem;
+					@include transition;
+					height: auto;
+
+					p {
+						@include fontStyles($size: 0.875rem, $lineHeight: 1.375rem);
+					}
+				}
+
+				&--collapsed {
+					margin-bottom: 0.375rem;
+
+					.hiring__head,
+					.faq__head {
+						&__action {
+							background: transparent url('../images/common/plus.svg') no-repeat
+								center center;
+						}
+					}
+
+					.hiring__body,
+					.faq__body {
+						@include transition;
+						visibility: hidden;
+						overflow: hidden;
+						margin-top: 0;
+						height: 0;
+					}
+				}
+			}
+
+			.faq {
+				&__body {
+					p {
+						color: $text-gray;
+					}
+				}
+
+				&__head {
+					&__label {
+						@include fontStyles($weight: 500);
+					}
+				}
+			}
+
+			.hiring {
+				&__head {
+					&__label {
+						@include fontStyles($weight: 600);
+					}
+				}
+			}
+		}
+	}
+
+	.demo {
+		margin-bottom: 2.5rem;
+
+		@include responsive_mobile() {
+			margin-bottom: 0;
+		}
+
+		.container {
+			background: $primary-light url('../images/home/demo_bg.webp') no-repeat
+				center center;
+			background-size: cover;
+
+			@include flexBox($justify: flex-end);
+			min-height: $demo-height;
+
+			@include responsive_tablet() {
+				min-height: $demo-height-tablet;
+			}
+
+			@include responsive_mobile() {
+				padding: 3rem 0 0 0;
+			}
+
+			.content {
+				min-height: $demo-height;
+				position: relative;
+				@include flexBox;
+				width: 100%;
+
+				@include responsive_medium2small() {
+					min-height: $demo-height-tablet;
+				}
+
+				@include responsive_mobile() {
+					@include flexBox($direction: column, $gap: 2rem);
+					padding-bottom: 3rem;
+				}
+
+				&__left {
+					margin-left: 1.625rem;
+					align-self: flex-end;
+
+					@include responsive_tablet() {
+						margin-right: 1.625rem;
+					}
+
+					@include responsive_mobile() {
+						margin-left: 0;
+					}
+				}
+
+				&__right {
+					@include flexBox($justify: center, $direction: column);
+					margin-right: 7.125rem;
+					text-align: center;
+					max-width: 14rem;
+					height: 100%;
+
+					@include responsive_tablet() {
+						margin-right: 3rem;
+					}
+
+					@include responsive_mobile() {
+						margin-right: 0;
+					}
+
+					h2 {
+						margin-bottom: 0.75rem;
+						@extend %h2;
+					}
+
+					.btn {
+						min-width: 10.75rem;
+					}
+				}
+			}
+		}
+	}
+
+	.companies {
+		border-top: $separator-companies-border;
+	}
+
+	.subscribe {
+		background: $black url('../images/home/subscriber_bg.webp') no-repeat center
+			center;
+		background-size: cover;
+
+		padding: 4rem 0;
+		color: $white;
+
+		.container {
+			text-align: center;
+
+			input[type='text'],
+			input[type='email'] {
+				background: $white url('../images/home/email_icon.svg') no-repeat
+					1.25rem center;
+				outline: $link-border-placeholder;
+				@include borderRadius(6.25rem);
+				padding: 0 1.25rem 0 3.75rem;
+				margin-top: 2.875rem;
+				height: $btn-height;
+				min-width: 27.75rem;
+				color: $text-input;
+				border: none;
+
+				@include responsive_mobile() {
+					min-width: 90vw;
+				}
+
+				&.invalid {
+					outline-color: $error-text;
+				}
+
+				&.valid {
+					outline-color: $primary;
+				}
+			}
+
+			//#form-submit-message {
+			//  text-shadow: 1px 1px 1px $black;
+			//  visibility: hidden;
+			//  min-height: 1.5rem;
+			//  display: block;
+
+			//  .success {
+			//    color: #84D484;
+			//  }
+			//}
+
+			h2 {
+				margin-bottom: 1.25rem;
+			}
+
+			p {
+				@include fontStyles($size: 1.125rem);
+			}
+
+			.btn {
+				margin: 1.625rem auto auto;
+				min-width: 10rem;
+
+				margin-top: 3rem;
+				max-width: 10rem;
+			}
+		}
+	}
+
+	footer {
+		background-color: $primary-light;
+
+		.topFooter {
+			padding: 3.75rem 0;
+
+			.container {
+				@include flexBox(
+					$justify: flex-start,
+					$align: flex-start,
+					$gap: 10.5rem
+				);
+
+				@include responsive_mobile() {
+					@include flexBox($direction: column, $gap: 3rem);
+				}
+
+				@include responsive_tablet() {
+					gap: 14vw;
+				}
+
+				.column {
+					@include responsive_mobile() {
+						width: 90vw;
+					}
+
+					.head {
+						min-height: 2.375rem;
+						text-align: left;
+
+						h4 {
+							line-height: 2.375rem;
+						}
+
+						.logo {
+							@include flexBox;
+
+							a {
+								display: block;
+
+								img {
+									max-height: 2.375rem;
+									width: 12rem;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.bottomFooter {
+			border-top: $separator-footer-border;
+
+			.container {
+				height: $bottom-footer-height;
+				@include flexBox;
+
+				@include responsive_mobile() {
+					@include flexBox($direction: column, $gap: 1rem);
+					height: auto;
+					padding: 1.5rem 0;
+				}
+
+				.column {
+					width: auto;
+					padding: 0;
+
+					p {
+						@extend %footerParagraph;
+
+						@include responsive_mobile() {
+							text-align: center;
+						}
+					}
+
+					.socialMedia {
+						@include flexBox($gap: 0.75rem);
+					}
+				}
+			}
+		}
+
+		.container {
+			.column {
+				.head {
+					@include fontStyles($size: 1.125rem, $lineHeight: 1.5625rem);
+					margin-bottom: 2.0625rem;
+
+					@include responsive_mobile() {
+						margin-bottom: 1.5rem;
+					}
+
+					h4 {
+						@include fontStyles(
+							$size: 1.125rem,
+							$weight: 600,
+							$lineHeight: 1.5625rem
+						);
+					}
+				}
+
+				&:first-of-type {
+					.content {
+						a {
+							@include fontStyles($size: 0.875rem, $lineHeight: 1.25rem);
+						}
+					}
+				}
+
+				.content {
+					@include fontStyles($size: 0.875rem, $lineHeight: 1.375rem);
+
+					p {
+						@extend %footerParagraph;
+						margin-top: 2.0625rem;
+					}
+
+					a {
+						@include fontStyles($size: 0.875rem, $lineHeight: 1.625rem);
+					}
+
+					ul {
+						list-style: none;
+
+						li {
+							@include fontStyles($lineHeight: 1.75rem);
+							position: relative;
+
+							margin-bottom: 0.35rem;
+
+							&::before {
+								background: url('../images/common/link_arrow.svg') no-repeat
+									center center;
+								transform: translateY(0.0625rem);
+								display: inline-block;
+								@include transition;
+								margin-right: 1rem;
+								height: 0.75rem;
+								width: 0.5rem;
+								content: '';
+							}
+
+							&:hover::before {
+								margin-right: 0.75rem;
+								margin-left: 0.25rem;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.home-banner {
+		background: $primary-light url('../images/home/home_bg_banner.webp')
+			no-repeat top left;
+		background-size: cover;
+
+		height: $banner-height;
+
+		@include responsive_tablet() {
+			min-height: $banner-height-tablet;
+		}
+
+		@include responsive_mobile() {
+			min-height: $banner-height-mobile;
+		}
+	}
+
+	// Sub-Header Stylesheet for pages
+	main {
+		&#blogs,
+		&#about-us,
+		&#use-cases,
+		&#careers,
+		&#contact-us,
+		&.generic-page {
+			.header-container {
+				padding: 9.0625rem 0 3.625rem;
+			}
+		}
+
+		& {
+			@include responsive_medium2small() {
+				.header-container {
+					padding: 4rem 0 !important;
+				}
+			}
+		}
+	}
+
+	.header-wrapper {
+		background: $primary-light url('../images/home/home_bg_banner.webp')
+			no-repeat top left;
+		background-size: cover;
+
+		width: 100%;
+
+		.header-container {
+			align-items: center;
+			justify-content: center;
+			display: flex;
+			flex-direction: column;
+
+			h3 {
+				@include fontStyles(
+					$size: 2.25rem,
+					$weight: 600,
+					$lineHeight: 3.4375rem
+				);
+				color: $black;
+			}
+
+			p {
+				@include fontStyles($size: 1.125rem, $lineHeight: 1.875rem);
+				color: $header-p-gray;
+				max-width: 844px;
+				text-align: center;
+				margin-top: 1rem;
+			}
+		}
+	}
 }
+
+
+/* Common Style Overrides - Starts */
+// common margin classes
+.ma-none { margin: 0 !important; }
+.mt-none { margin-top: 0 !important; }
+.mb-none { margin-bottom: 0 !important; }
+.ma-sm { margin: 0.25rem !important; }
+.ma-md { margin: 0.5rem !important; }
+.ma-lg { margin: 1rem !important; }
+.ma-xl { margin: 2rem !important; }
+.mt-sm { margin-top: 0.25rem !important; }
+.mt-md { margin-top: 0.5rem !important; }
+.mt-lg { margin-top: 1rem !important; }
+.mt-xl { margin-top: 2rem !important; }
+.mb-sm { margin-bottom: 0.25rem !important; }
+.mb-md { margin-bottom: 0.5rem !important; }
+.mb-lg { margin-bottom: 1rem !important; }
+.mb-xl { margin-bottom: 2rem !important; }
+
+// common padding classes
+.pa-none { padding: 0 !important; }
+.pt-none { padding-top: 0 !important; }
+.pb-none { padding-bottom: 0 !important; }
+.pa-sm { padding: 0.25rem !important; }
+.pa-md { padding: 0.5rem !important; }
+.pa-lg { padding: 1rem !important; }
+.pa-xl { padding: 2rem !important; }
+.pt-sm { padding-top: 0.25rem !important; }
+.pt-md { padding-top: 0.5rem !important; }
+.pt-lg { padding-top: 1rem !important; }
+.pt-xl { padding-top: 2rem !important; }
+.pb-sm { padding-bottom: 0.25rem !important; }
+.pb-md { padding-bottom: 0.5rem !important; }
+.pb-lg { padding-bottom: 1rem !important; }
+.pb-xl { padding-bottom: 2rem !important; }
+
+ // can be used with anchor links
+.hover-line { border-bottom-color: transparent !important; }
+.hover-line:hover { border-bottom-color: currentColor !important; }
+
+// to change text color as per the docs
+.text-black { color: black !important; }
+.text-gray { color: #595959 !important; }
+
+// for text alignment changes
+.align-left { text-align: left !important; }
+.align-right { text-align: right !important; }
+.align-center { text-align: center !important; }
+
+// for text case changes
+.uppercase { text-transform: uppercase !important; }
+.lowercase { text-transform: lowercase !important; }
+.capitalize { text-transform: capitalize !important; }
+
+.text-bold { font-weight: bold !important; } // use <strong> tag instead of this class
+.text-italic { font-style: italic !important; } // use <em> tag instead of this class
+.text-underline { text-decoration: underline !important; } // use <u> tag instead of this class
+/* Common Style Overrides - Ends */
