@@ -31,6 +31,7 @@ import GITHUB_ICON from './common/github_icon.svg';
 
 // SOCIAL ICON
 import LINKEDIN_ICON from './common/linkedin_icon.svg';
+import TWITTER_ICON from './common/twitter_icon.svg';
 
 // ABOUT_US
 import ABOUT_ZINC_SEARCH from './about-us/about_zincsearch_1.webp';
@@ -38,8 +39,10 @@ import WHY_ZINC_1 from './about-us/why_zinc_1.svg';
 import WHY_ZINC_2 from './about-us/why_zinc_2.svg';
 import WHY_ZINC_3 from './about-us/why_zinc_3.svg';
 import WHY_ZINC_4 from './about-us/why_zinc_4.svg';
-import FOUNDER_1 from './about-us/founder_1.webp';
-import FOUNDER_2 from './about-us/founder_2.webp';
+import TEAM_MEMBER_1 from './about-us/team_member_1.webp';
+import TEAM_MEMBER_2 from './about-us/team_member_2.webp';
+import TEAM_MEMBER_3 from './about-us/team_member_3.webp';
+import TEAM_MEMBER_4 from './about-us/team_member_4.webp';
 import COLOR_LINKEDIN_ICON from './about-us/linkedin_icon.svg';
 
 // USE CASES
@@ -83,13 +86,16 @@ export {
   LOGO_ICON,
   GITHUB_ICON,
   LINKEDIN_ICON,
+  TWITTER_ICON,
   ABOUT_ZINC_SEARCH,
   WHY_ZINC_1,
   WHY_ZINC_2,
   WHY_ZINC_3,
   WHY_ZINC_4,
-  FOUNDER_1,
-  FOUNDER_2,
+  TEAM_MEMBER_1,
+  TEAM_MEMBER_2,
+  TEAM_MEMBER_3,
+  TEAM_MEMBER_4,
   COLOR_LINKEDIN_ICON,
   LOG_SEARCH,
   APP_SEARCH,
