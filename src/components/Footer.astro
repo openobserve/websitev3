@@ -1,15 +1,16 @@
 ---
 import { GoogleAnalytics } from 'astro-analytics';
-import { GITHUB_ICON, LINKEDIN_ICON, TWITTER_ICON, LOGO_ICON } from '../assets/images';
+import { GITHUB_ICON, LINKEDIN_ICON, LOGO_ICON } from '../assets/images';
 
 import {
   MENU_LISTS,
   DEFAULT_PATH,
   ZINC_DOCS_GET_STARTED_LINK,
   ZINC_DOCS_SERVER_LINK,
+  PRIVACY_POLICY_PATH,
+  TERMS_OF_SERVICE_PATH,
   GITHUB_REPO_LINK,
-  LINKEDIN_LINK,
-  TWITTER_LINK
+  LINKEDIN_LINK
 } from '../utils/constant.js';
 import ButtonLink from './ButtonLink.astro';
 ---
@@ -60,10 +61,16 @@ import ButtonLink from './ButtonLink.astro';
         <div class="content">
           <ul>
             <li>
-              <ButtonLink hrefLink={ZINC_DOCS_GET_STARTED_LINK} className={"bottomBorderHover"} title={"Get Started"} />
+              <ButtonLink hrefLink={ZINC_DOCS_GET_STARTED_LINK} className={"bottomBorderHover"} />
             </li>
             <li>
               <ButtonLink hrefLink={ZINC_DOCS_SERVER_LINK} className={"bottomBorderHover"} title={"Server API"} />
+            </li>
+            <li>
+              <ButtonLink hrefLink={PRIVACY_POLICY_PATH} className={"bottomBorderHover"} title={"Privacy Policy"} />
+            </li>
+            <li>
+              <ButtonLink hrefLink={TERMS_OF_SERVICE_PATH} className={"bottomBorderHover"} title={"Terms Of Service"} />
             </li>
           </ul>
         </div>
@@ -84,12 +91,6 @@ import ButtonLink from './ButtonLink.astro';
             <a rel="noreferrer noopener" href={LINKEDIN_LINK} title="LinkedIn"
               target="_blank">
               <img src={LINKEDIN_ICON} alt="LinkedIn">
-            </a>
-          </li>
-          <li>
-            <a rel="noreferrer noopener" href={TWITTER_LINK} title="Twitter"
-              target="_blank">
-              <img src={TWITTER_ICON} alt="Twitter">
             </a>
           </li>
         </ul>
