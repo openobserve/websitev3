@@ -619,7 +619,7 @@ body.modal-open {
 
 				li {
 					position: relative;
-					margin: 0 0.7rem;
+					margin: 0 0.6rem;
 
 					&:not(.getStarted) {
 						&::after {
@@ -1392,6 +1392,7 @@ body.modal-open {
 .pa-md { padding: 0.5rem !important; }
 .pa-lg { padding: 1rem !important; }
 .pa-xl { padding: 2rem !important; }
+.pa-sm2 { padding: 0 0.75rem !important;}
 .pt-sm { padding-top: 0.25rem !important; }
 .pt-md { padding-top: 0.5rem !important; }
 .pt-lg { padding-top: 1rem !important; }
