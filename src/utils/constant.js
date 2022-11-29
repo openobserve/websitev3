@@ -28,7 +28,7 @@ export const ZINC_DOCS_LINK = 'https://docs.zincsearch.com/';
 export const ZINC_DOCS_GET_STARTED_LINK = 'https://docs.zincsearch.com/getting-started/';
 export const ZINC_DOCS_SERVER_LINK = 'https://docs.zincsearch.com/api/';
 
-export const ZINC_CLOUD_BETA_LINK = 'https://z9uzdkifovs.typeform.com/zinc-cloud';
+export const ZINC_CLOUD_BETA_LINK = 'https://cloud.zincsearch.com';
 
 // GITHUB LINKS
 export const GITHUB_REPO_LINK = 'https://github.com/zinclabs/zinc';
