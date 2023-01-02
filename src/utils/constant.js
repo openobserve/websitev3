@@ -10,7 +10,9 @@ import {
   TEAM_MEMBER_1,
   TEAM_MEMBER_2,
   TEAM_MEMBER_3,
-  TEAM_MEMBER_4
+  TEAM_MEMBER_4,
+  INVESTOR_1,
+  INVESTOR_2,
 } from "../assets/images";
 
 export const ABSOLUTE_PATH = 'http://localhost:3000/src/';
@@ -204,6 +206,20 @@ export const TEAM_LIST = [
 		name: 'Bhargav Patel',
 		designation: 'Software Engineer',
 		description: 'Bhargav Patel is a software professional with proven skills in spearheading cloud technology, front-end technologies, release automation process and application development in IT projects. He has lead technical deliveries for past 15 years.',
+	},
+];
+
+// Investors
+export const INVESTOR_LIST = [
+	{
+    image: INVESTOR_1,
+    url: 'https://www.delltechnologiescapital.com/',
+		name: 'Dell Technologies Capital',
+	},
+	{
+    image: INVESTOR_2,
+    url: 'https://nexusvp.com/',
+		name: 'Nexus Venture Partners',
 	},
 ];
 

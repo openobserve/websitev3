@@ -9,7 +9,7 @@ import {
   WHY_ZINC_3,
   WHY_ZINC_4
 } from '../assets/images';
-import { TEAM_LIST } from '../utils/constant.js';
+import { TEAM_LIST, INVESTOR_LIST } from '../utils/constant.js';
 import DefaultLayout from '../layouts/DefaultLayout.astro';
 import HeaderTitle from '../components/HeaderTitle.astro';
 ---
@@ -71,7 +71,7 @@ import HeaderTitle from '../components/HeaderTitle.astro';
             <figure>
               <img style="max-height:35px" src={WHY_ZINC_3}
                 alt="Lower Resource Requirements (CPU, Memory)" title="Lower Resource Requirements (CPU, Memory)">
-              <figcaption>Stateless Server (Experimental Phase)</figcaption>
+              <figcaption>Stateless Server</figcaption>
             </figure>
             <ul class="points">
               <li>ZincSearch strives to provide stateless servers that can be scaled horizontally</li>
@@ -94,29 +94,26 @@ import HeaderTitle from '../components/HeaderTitle.astro';
       </div>
     </div>
 
-    <!-- Team Section -->
+    <!-- Backers Section -->
     <div class="team-wrapper">
-      <h2 class="align-item-center">The Team</h2>
+      <h2 class="align-item-center">We are backed by incredible investors</h2>
       <div class="container" id="teamContainer">
-        {TEAM_LIST.map(({ image, name, linkedInURL, designation, description }) => (
+        {INVESTOR_LIST.map(({ image, name, url }) => (
             <div class="card card--team">
               <div class="card__icon">
-                <img src={image} alt={name} title={name} class="user-image" />
-                <a class="linkedin-icon" rel="noreferrer noopener" href={linkedInURL} target="_blank">
-                  <img src={COLOR_LINKEDIN_ICON} alt={name} title={name}/>
+                <a rel="noreferrer noopener" href={url} target="_blank">
+                  <img src={image} alt={name} title={name} class="user-image" />
                 </a>
               </div>
               <div class="card__head">
                 <h1 class="name">{name}</h1>
-                <div class="designation">{designation}</div>
-              </div>
-              <div class="card__content">
-                <p>{description}</p>
               </div>
             </div>
           )
         )}
       </div>
     </div>
+
+
   </main>
 </DefaultLayout>

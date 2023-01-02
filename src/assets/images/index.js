@@ -43,6 +43,10 @@ import TEAM_MEMBER_1 from './about-us/team_member_1.webp';
 import TEAM_MEMBER_2 from './about-us/team_member_2.webp';
 import TEAM_MEMBER_3 from './about-us/team_member_3.webp';
 import TEAM_MEMBER_4 from './about-us/team_member_4.webp';
+
+import INVESTOR_1 from './about-us/dtc.png';
+import INVESTOR_2 from './about-us/nexus.png';
+
 import COLOR_LINKEDIN_ICON from './about-us/linkedin_icon.svg';
 
 // USE CASES
@@ -96,6 +100,8 @@ export {
   TEAM_MEMBER_2,
   TEAM_MEMBER_3,
   TEAM_MEMBER_4,
+  INVESTOR_1,
+  INVESTOR_2,
   COLOR_LINKEDIN_ICON,
   LOG_SEARCH,
   APP_SEARCH,
